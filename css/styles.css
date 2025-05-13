@@ -17,3 +17,10 @@ pre {
   padding: 5px;
   border-radius: 4px;
 }
+
+.attribute {
+  color: yellow;
+}
+.value {
+  color: chartreuse;
+}
