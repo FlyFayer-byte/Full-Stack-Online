@@ -1,26 +1,64 @@
-h1 {
-  color: brown;
-}
-h2 {
-  color: blue;
-}
-code {
-  color: white;
-  border: 1px solid black;
-  border-radius: 4px;
-  padding: 0 3px;
-  background-color: black;
-}
-pre {
-  background-color: black;
-  color: blanchedalmond;
-  padding: 5px;
-  border-radius: 4px;
+body {
+  color: #2f2f37;
 }
 
-.attribute {
-  color: yellow;
+h1 {
+  text-align: center;
 }
-.value {
-  color: chartreuse;
+
+h2 {
+  color: blue;
+  padding-left: 20px;
+}
+
+h3 {
+  color: red;
+}
+
+ul {
+  list-style: none;
+}
+
+code {
+  background-color: rgba(135, 131, 120, 0.15);
+  padding: 2px 2px;
+  border-radius: 4px;
+  color: #2f2f37;
+}
+
+/*<p class="ql-align-justify">*/
+.ql-align-justify {
+  text-align: justify;
+}
+
+/*<div class="ql-syntax-block">*/
+.ql-syntax-block {
+  position: relative;
+}
+
+/*<pre class="ql-syntax hljs language-bnf">*/
+.ql-syntax {
+  position: relative;
+  font-family: "Fira Code", monospace;
+  padding: 24px 56px 24px 24px;
+  color: inherit;
+  background-color: rgb(236, 239, 241);
+  border-radius: 16px;
+}
+
+/*<span class="hljs-attribute">*/
+.hljs-attribute,
+.hljs-string {
+  color: #98c379;
+}
+
+.ql-blockquote {
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 24px;
+  border: none;
+  border-radius: 16px;
+  background-color: rgb(236, 244, 248);
+  overflow: visible;
+  white-space: pre-wrap;
 }
