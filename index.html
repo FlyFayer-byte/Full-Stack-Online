@@ -755,12 +755,173 @@ mango@mail.pig <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt
           Для цього використовуються спеціальні значення атрибуту
           <code>href</code>.
         </p>
+        <p>
+          Щоб при натисканні на посилання користувачеві мобільного телефону було
+          запропоновано здійснити дзвінок, треба додати в атрибут
+          <code>href</code> значення <code>tel:номер-телефону</code>. Номер
+          телефону в атрибуті має бути в міжнародному форматі (починається з +)
+          та без будь-яких розділових знаків або пробілів.
+        </p>
+        <pre
+          class="ql-syntax hljs language-subunit"
+          spellcheck="false"
+          data-highlighted="yes"
+        >&lt;a href="tel:<span class="hljs-string">+14251234563</span>"&gt;<span class="hljs-string">+1</span>(425) 123<span class="hljs-string">-45</span><span class="hljs-string">-63</span>&lt;/a&gt;</pre>
+        <p>
+          Щоб при натисканні на посилання користувачеві мобільного телефону було
+          запропоновано здійснити дзвінок, треба додати в атрибут
+          <code>href</code> значення <code>tel:номер-телефону</code>. Номер
+          телефону в атрибуті має бути в міжнародному форматі (починається з +)
+          та без будь-яких розділових знаків або пробілів.
+        </p>
+        <p>
+          Щоб при натисканні на посилання користувачеві відкривався його
+          поштовий клієнт із заповненим полем одержувача, треба додати в атрибут
+          <code>href</code> значення <code>mailto:адреса-пошти</code>, де
+          <code>адреса-пошти</code> - це адреса одержувача, людини або компанії,
+          що додається до приставки <code>mailto</code> без будь-яких символів
+          або пробілів.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-xml"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"mailto:example@mail.pig"</span>&gt;</span>example@mail.pig<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></pre>
+        </div>
+        <p>
+          Такі посилання можна вкладати в тег
+          <code style="background-color: rgba(135, 131, 120, 0.15)"
+            >&lt;address&gt;</code
+          >
+          та використовувати в поєднанні з розміткою контактної
+          інформації.&nbsp;
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-xml"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-tag">&lt;<span class="hljs-name">address</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"mailto:mango@mail.pig"</span>&gt;</span>mango@mail.pig<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"tel:+11112223344"</span>&gt;</span>+1(111) 222-33-44<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+м. Київ, <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+Бульвар Лесі Українки, буд. 26, <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+4й поверх офіс 427
+<span class="hljs-tag">&lt;/<span class="hljs-name">address</span>&gt;</span></pre>
+        </div>
+        <!--Посилання: атрибут download-->
+        <h3>
+          <strong class="ql-size-large">Посилання: атрибут </strong
+          ><code class="ql-size-large"><strong>download</strong></code>
+        </h3>
+        <p>
+          У посиланні
+          <code>&lt;a&gt;</code> значення атрибуту <code>href</code>
+          може вказувати на шлях до файлу, як у прикладі нижче. У цьому випадку
+          браузер спробує відкрити його на поточній вкладці, якщо вміє обробляти
+          файли цього типу. Зазвичай так відбувається із зображеннями та
+          PDF-файлами.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-xml"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/шлях/до/cv.pdf"</span>&gt;</span>Резюме<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></pre>
+        </div>
+        <p>
+          Атрибут <code>download</code> повідомляє браузеру, що зазначений
+          ресурс має бути не відкритий, а завантажений у разі, якщо користувач
+          натисне на посилання.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-xml"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/шлях/до/cv.pdf"</span> <span class="hljs-attr">download</span>&gt;</span>Завантажити резюме<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></pre>
+        </div>
+        <p>
+          В атрибуті <code>download</code> можна не вказувати жодного значення.
+          У цьому випадку ім’я файлу при завантаженні буде співпадати з
+          ім’ям,вказаним в атрибуті <code>href</code> .
+        </p>
+        <p>
+          Значення атрибуту <code>download</code> визначає нове ім'я файлу після
+          його завантаження. Обмежень на допустимі значення немає: браузер
+          автоматично визначить правильне розширення файлу та додасть його до
+          завантаженого файлу — .img, .pdf, .txt, .html тощо.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-abnf"
+            spellcheck="false"
+            data-highlighted="yes"
+          >&lt;a href<span class="hljs-operator">=</span><span class="hljs-string">"/шлях/до/cv.pdf"</span> download<span class="hljs-operator">=</span><span class="hljs-string">"cat-resume"</span>&gt;Завантажити резюме&lt;/a&gt;</pre>
+        </div>
+        <!--Тег <button>-->
+        <h3><strong class="ql-size-large">Тег &lt;button&gt;</strong></h3>
+        <p>
+          Тег <code>&lt;button&gt;</code> створює клікабельну кнопку –
+          інтерактивний елемент, який стає повністю функціональним за допомогою
+          мови програмування JavaScript.
+        </p>
+        <p>
+          <strong>Значення атрибута </strong><code><strong>type</strong></code>
+        </p>
+        <p>Атрибут <code>type</code> задає тип кнопки.</p>
+        <ul>
+          <li>
+            значення атрибута за замовчуванням — <code>type="submit"</code>,
+            оскільки кнопки створювалися для форм.
+          </li>
+          <li>
+            при використанні кнопки поза формою, тобто як незалежний
+            інтерактивний елемент, потрібно вказати значення атрибута
+            <code>type="button"</code>.
+          </li>
+        </ul>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-xml"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Open sidebar<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></pre>
+        </div>
+        <p><strong>Кнопка чи посилання?</strong></p>
+        <p>
+          Важливо не плутати посилання та кнопку, тому що в макеті сайту вони
+          можуть виглядати однаково. CSS дозволяє ідентично стилізувати ці два
+          елементи.
+        </p>
+        <img
+          src="./images/modul_1/b03s16.png"
+          alt="Is this a button or a link?"
+        />
+        <p>
+          Використовуй <strong>посилання</strong>, якщо при кліку по елементу
+          інтерфейсу відбувається:
+        </p>
+        <ul>
+          <li>перехід за якоюсь адресою;</li>
+          <li>скрол поточної сторінки;</li>
+          <li>завантажується файл.</li>
+        </ul>
+        <p>Всі ці дії вимагають задати атрибут <code>href</code>.</p>
+        <p>
+          Використовуй <strong>кнопку</strong>, якщо при кліку відбувається щось
+          без перезавантаження чи перенаправлення сторінки.
+        </p>
+        <pre class="ql-blockquote" spellcheck="false">
+Найчастіше ми інтуїтивно розуміємо, що саме слід обрати. Проте, у складніших інтерфейсах при постановці завдання розробнику вказується необхідний тип елемента.</pre
+        >
       </div>
-
-      <!-- <h2>Структурна розмітка</h2>
+      <!--Структурна розмітка-->
+      <h2>Структурна розмітка</h2>
       <div></div>
 
-      <h2>Скелет HTML-документа</h2>
+      <!--<h2>Скелет HTML-документа</h2>
       <div></div>
 
       <h2>Алгоритм створення сторінки</h2>

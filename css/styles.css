@@ -11,18 +11,21 @@ body {
 h1 {
   text-align: center;
   padding-top: 10px;
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 
 h2 {
   color: blue;
   padding-left: 20px;
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 
 h3 {
   color: red;
   padding-left: 10px;
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 
