@@ -967,21 +967,1181 @@ mango@mail.pig <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt
       <h2>Домашнє завдання</h2>
     </section> -->
     <!--Модуль 4. Декоративні ефекти-->
-    <!-- <h1>Модуль 4. Декоративні ефекти</h1>
+    <h1>Модуль 4. Декоративні ефекти</h1>
     <section>
-      <h2>Програма модулю</h2>
+      <!--Фон елемента-->
       <h2>Фон елемента</h2>
+      <div>
+        <p>
+          <strong class="ql-size-large"
+            >Контентні та декоративні зображення</strong
+          >
+        </p>
+        <p>
+          На сайті завжди є зображення. Вони допомагають виразити вміст сторінки
+          чи просто додають декоративне оформлення. Отже, є два типи зображень:
+        </p>
+        <ol>
+          <li>контентні;</li>
+          <li>декоративні.</li>
+        </ol>
+        <p>
+          <strong
+            >Яка різниця між контентними та декоративними зображеннями?</strong
+          >
+        </p>
+        <p>
+          <strong>Контентні зображення</strong> несуть смислове навантаження,
+          відносяться до вмісту сторінки та допомагають донести до користувача
+          корисну інформацію. Вони додаються в HTML-розмітці за допомогою тега
+          <code>&lt;img&gt;</code> з обов'язково заповненим атрибутом
+          <code>alt</code>, що описує зображення.
+        </p>
+        <pre
+          class="ql-blockquote"
+          spellcheck="false"
+        ><strong>Приклади контентних зображень:</strong> — фотографія продукту на картці товару в інтернет-магазині; — фотографії членів команди; — логотип компанії; — рекламні банери; — карти з локацією; — картинки слайдера.</pre>
+        <p>
+          <strong>Декоративні зображення</strong> використовуються для
+          додаткового оформлення. Вони не несуть корисної інформації та є
+          елементами дизайну. Додаються через CSS як фон елемента або, у випадку
+          векторної графіки, розмічаються в HTML тегом <code>&lt;svg&gt;</code>.
+        </p>
+        <pre
+          class="ql-blockquote"
+          spellcheck="false"
+        ><strong>Приклади декоративних зображень:</strong> - кастомні маркери списків; - допоміжні іконки; - плашки; - фонові зображення блоків.</pre>
+        <p>
+          <strong>Фон</strong> — це не тільки декоративний ефект для оформлення,
+          але й допомога у сприйнятті ідеї, підказка про вміст елемента.
+          Наприклад, зелений колір асоціюється з успішною операцією, а червоний
+          - з помилкою. Фонове зображення також допомагає передати вміст або
+          додати оформлення.
+        </p>
+        <p>
+          <strong class="ql-size-large"
+            >Властивість <code>background-image</code></strong
+          >
+        </p>
+        <p>
+          Властивість <code>background-image</code> задає фонове зображення
+          елемента, адреса якого вказується аргументом функції
+          <code>url()</code>. Це може бути як відносний, так і абсолютний шлях.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">шлях до зображення</span>);</pre>
+        </div>
+        <pre
+          class="ql-blockquote"
+          spellcheck="false"
+        >Елемент фону поширюється лише на область вмісту і падінг і <strong>ніколи на маржин</strong>, бо маржин є зовнішнім відступом.</pre>
+        <p>
+          Варто відразу задати колір фону та фонове зображення, яке завжди буде
+          розташоване поверх фону. Наприклад, у випадку коли зображення не
+          завантажилося, користувач побачить хоча б колір фону, що виділяється,
+          а не порожнє місце. Це особливо актуально, якщо в блоці є текст, колір
+          якого не контрастує з основним кольором документа.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-selector-class">.hero</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#2a2a2a</span>;
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">шлях до зображення</span>);
+}</pre>
+        </div>
+        <p>
+          <strong class="ql-size-large"
+            >Властивість <code>background-repeat</code></strong
+          >
+        </p>
+        <p>
+          Властивість <code>background-repeat</code> керує повторенням фонового
+          зображення. За замовчуванням воно повторюється по горизонталі (X) та
+          вертикалі (Y). Це відбувається, якщо зображення менше ніж розмір
+          елемента.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-gml"
+            spellcheck="false"
+            data-highlighted="yes"
+          >background-<span class="hljs-keyword">repeat</span>: <span class="hljs-keyword">repeat</span> | <span class="hljs-keyword">repeat</span>-<span class="hljs-variable language_">x</span> | <span class="hljs-keyword">repeat</span>-<span class="hljs-variable language_">y</span> | no-<span class="hljs-keyword">repeat</span></pre>
+        </div>
+        <ul>
+          <li>
+            <code>repeat</code> - повторювати X і Y. Значення за замовчуванням.
+          </li>
+          <li>
+            <code>repeat-x</code> - повторювати тільки X, тобто по горизонталі.
+          </li>
+          <li>
+            <code>repeat-y</code> - повторювати тільки Y, тобто по вертикалі.
+          </li>
+          <li><code>no-repeat</code> - не повторювати.</li>
+        </ul>
+        <p>
+          Навіть якщо ви знаєте, що зображення більше ніж розміри елемента,
+          хорошим тоном вважається задати властивість
+          <code>background-repeat</code> зі значенням <code>no-repeat</code>,
+          щоб унеможливити будь-яку можливість небажаної поведінки.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-selector-class">.hero</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#2a2a2a</span>;
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">шлях до зображення</span>);
+  <span class="hljs-attribute">background-repeat</span>: no-repeat;
+}</pre>
+        </div>
+        <p>
+          <strong class="ql-size-large"
+            >Властивість <code>background-position</code></strong
+          >
+        </p>
+        <p>
+          Властивість <code>background-position</code> керує положенням фонового
+          зображення відносно&nbsp;рамки елемента, використовуючи дві координати
+          — <code>x</code> по горизонталі і <code>y</code> по вертикалі.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arduino"
+            spellcheck="false"
+            data-highlighted="yes"
+          >
+background-position: x y;</pre
+          >
+        </div>
+        <p>
+          У якості значення можна використовувати абсолютні (<code>px</code>) чи
+          відносні (<code>%</code>) одиниці, і навіть ключові слова (top,
+          bottom, right, left, center).
+        </p>
+        <p>
+          За замовчуванням задане
+          значення&nbsp;<code>left</code>&nbsp;для&nbsp;<code>x</code>&nbsp;і&nbsp;<code>top</code>&nbsp;для&nbsp;<code>y</code>,
+          тобто фон позиціонується відносно&nbsp;верхнього лівого кута елемента.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arduino"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-comment">/* Розмістити фонове зображення по центру */</span>
+  background-position: <span class="hljs-number">50</span>% <span class="hljs-number">50</span>%;
+          
+<span class="hljs-comment">/* Розмістити фонове зображення 100px від лівого краю та 200px від верху */</span>
+  background-position: <span class="hljs-number">100</span>px <span class="hljs-number">200</span>px;
+          
+<span class="hljs-comment">/* Розмістити фонове зображення у нижній правий кут */</span>
+  background-position: right bottom;
+          
+<span class="hljs-comment">/* Розмістити фонове зображення у верхній лівий кут */</span>
+  background-position: left top;</pre>
+        </div>
+        <p>
+          <strong class="ql-size-large"
+            >Налаштування позиції зі зміщенням</strong
+          >
+        </p>
+        <p>
+          Щоб не прив'язуватися до розмірів елемента та не задавати позицію фону
+          жорстко, можна використовувати синтаксис позиції зі зміщенням.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-gml"
+            spellcheck="false"
+            data-highlighted="yes"
+          >background-position: <span class="hljs-variable language_">x</span> зміщення-<span class="hljs-variable language_">x</span> <span class="hljs-variable language_">y</span> зміщення-<span class="hljs-variable language_">y</span></pre>
+        </div>
+        <p>
+          Наприклад, якщо необхідно розташувати фон у нижньому правому куті
+          елемента довільних розмірів таким чином, щоб фон відставав від меж на
+          <code>30px</code> справа і <code>20px</code> знизу.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-apache"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-attribute">background</span>-position: right <span class="hljs-number">30</span>px bottom <span class="hljs-number">20</span>px;</pre>
+        </div>
+        <p>
+          <strong class="ql-size-large"
+            >Властивість <code>background-size</code></strong
+          >
+        </p>
+        <p>
+          За замовчуванням браузер не змінює розмір фонового зображення. Якщо
+          картинка буде більшою або меншою за розмір елемента, утвориться
+          порожній простір, не зайнятий фоном, або, навпаки, фон буде видно лише
+          частково.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arduino"
+            spellcheck="false"
+            data-highlighted="yes"
+          >background-size: <span class="hljs-keyword">auto</span> | значення | cover | contain</pre>
+        </div>
+        <p>
+          Ця властивість дозволяє коригувати розміри зображення шляхом
+          налаштування необхідної ширини та висоти. Якщо не вказати висоту, вона
+          буде розрахована автоматично зі збереженням пропорцій.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arduino"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-comment">/* Вихідні розміри зображення, значення за замовчуванням */</span>
+   background-size: <span class="hljs-keyword">auto</span> <span class="hljs-keyword">auto</span>;
+          
+<span class="hljs-comment">/* Ширина 200px, висота буде пропорційна */</span>
+   background-size: <span class="hljs-number">200</span>px;
+          
+<span class="hljs-comment">/* Ширина 200px, висота 300px */</span>
+   background-size: <span class="hljs-number">200</span>px <span class="hljs-number">300</span>px;</pre>
+        </div>
+        <p>
+          Значенням також можуть бути два зарезервовані слова:&nbsp;<code
+            >cover</code
+          >
+          і <code>contain</code>. Функція обох значень — максимально вмістити у
+          контейнер фонове зображення, але різними способами.
+        </p>
+        <ul>
+          <li><code>cover</code> — за рахунок обрізання зайвого.</li>
+          <li>
+            <code>contain</code>&nbsp;— за рахунок утворення порожнього простору
+            в контейнері.
+          </li>
+        </ul>
+        <img src="./images/modul_4/04-1-size.png" alt="background-size" />
+        <p>
+          <strong>Значення&nbsp;</strong><code><strong>cover</strong></code
+          ><strong>:</strong>
+        </p>
+        <ul>
+          <li>Гарантовано зберігає пропорції зображення.</li>
+          <li>
+            Зображенню задані <strong>мінімальні розміри</strong>, за яких воно
+            <strong>заповнить фон</strong> <strong>всього елемента</strong>.
+          </li>
+          <li>
+            Якщо пропорції зображення та елемента різні,
+            <strong>частина зображення</strong> по вертикалі або горизонталі
+            <strong>візуально обрізається</strong>.
+          </li>
+        </ul>
+        <p><strong>Значення</strong>&nbsp;<code>contain</code>:</p>
+        <ul>
+          <li>Гарантовано зберігає пропорції зображення.</li>
+          <li>
+            Зображенню задані <strong>максимально можливі розміри</strong>, за
+            яких воно <strong>повністю поміщається в елемент</strong>.
+          </li>
+          <li>
+            Зображення <strong>може не закрити весь фон</strong> елемента по
+            вертикалі або горизонталі, якщо пропорції блоку та зображення не
+            збігаються.
+          </li>
+        </ul>
+        <p>
+          Додамо властивість <code>background-size</code> із значенням
+          <code>cover</code> для елемента секції привітання.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-selector-class">.hero</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#2a2a2a</span>;
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">шлях до зображення</span>);
+  <span class="hljs-attribute">background-repeat</span>: no-repeat;
+  <span class="hljs-attribute">background-position</span>: center;
+  <span class="hljs-attribute">background-size</span>: cover;
+}</pre>
+        </div>
+        <p><strong class="ql-size-large">Багатошаровий фон</strong></p>
+        <p>
+          Елементу можна задати кілька фонових зображень одночасно. Достатньо
+          перерахувати їх у властивості&nbsp;<code>background-image</code> через
+          кому. Для кожного зображення також можна задати значення інших
+          властивостей фону, також через кому в кожній властивості.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-attribute">  background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">шлях до зображення 1</span>), <span class="hljs-built_in">url</span>(<span class="hljs-string">шлях до зображення 2</span>);
+  <span class="hljs-attribute">background-size</span>: <span class="hljs-number">100px</span>, cover;
+  <span class="hljs-attribute">background-position</span>: top right, center;
+  <span class="hljs-attribute">background-repeat</span>: repeat-x, no-repeat;</pre>
+        </div>
+        <pre class="ql-blockquote" spellcheck="false"><strong>Порада</strong> 
+          У більшості випадків багатошаровий фон можна замінити одним зображенням, на якому в спеціальному редакторі були поєднані всі інші. Вага такого файлу буде меншою, ніж загальна вага окремих картинок, і браузеру необхідно буде зробити лише один запит замість п'яти, що також збільшить швидкість завантаження та відображення сторінки.</pre>
+
+        <p><strong class="ql-size-large">Лінійний градієнт</strong></p>
+        <p>
+          Градієнт - перехід від одного кольору до іншого. У CSS градієнт - це
+          фонове зображення, тому він задається як значення властивості
+          <code>background-image</code>. Лінійний градієнт створюється за
+          допомогою двох і більше кольорів, яким задано напрямок розповсюдження.
+        </p>
+        <p>
+          Формат значення кольору може бути будь-яким: ключові слова, rgb, rgba
+          чи hex, та їх можна змішувати.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-xml"
+            spellcheck="false"
+            data-highlighted="yes"
+          >background-image: linear-gradient(
+  <span class="hljs-tag">&lt;<span class="hljs-name">напрямок</span>&gt;</span>, 
+  <span class="hljs-tag">&lt;<span class="hljs-name">колір-1</span>&gt;</span>, 
+  <span class="hljs-tag">&lt;<span class="hljs-name">колір-2</span>&gt;</span>, 
+  <span class="hljs-tag">&lt;<span class="hljs-name">колір-3</span>&gt;</span>, 
+  ...
+)</pre>
+        </div>
+        <p>
+          Напрямок градієнта задається ключовими словами <code>to top</code>,
+          <code>to right</code>, <code>to bottom</code>, <code>to left</code> і
+          їх комбінаціями. Якщо напрямок не вказано, використовується значення
+          за замовчуванням - зверху-вниз (<code>to bottom</code>). У разі коли
+          напрямок задано парою ключових слів, наприклад,
+          <code>to top left</code>, початкова точка градієнта буде розташована в
+          правому нижньому кутку, тобто протилежному.
+        </p>
+        <p>
+          Напрямок також можна задати кутом нахилу в градусах - одиниця
+          <code>deg</code>. Значення <code>0deg</code> є аналогічним
+          <code>to top</code>. Збільшення кута повертає напрямок лінії
+          градієнта. Лінія градієнта - це пряма, що проходить через центр блоку
+          і вздовж якої розподіляються кольори за годинниковою стрілкою.
+        </p>
+        <img
+          src="./images/modul_4/556ce455-691a-4cd6-9895-68967285872fgradient-direction.gif"
+          alt="linear-gradient"
+        />
+        <pre class="ql-blockquote" spellcheck="false">
+У цій анімації кут збільшується від 0 до 360 градусів із кроком 10 градусів. Низька роздільна здатність дозволяє краще бачити, як різні кольори відображаються у вигляді «ліній», що завжди перпендикулярні лінії градієнта.</pre
+        >
+        <p>
+          <strong class="ql-size-large"
+            >Властивість <code>background</code></strong
+          >
+        </p>
+        <p>
+          Властивість <code>background</code> - це складена властивість
+          <span style="color: rgb(0, 0, 0)"
+            >для одночасного встановлення значень всіх розглянутих
+            властивостей.</span
+          >
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arduino"
+            spellcheck="false"
+            data-highlighted="yes"
+          >
+background: background-color background-image background-repeat background-position background-attachment background-size</pre
+          >
+        </div>
+        <p>
+          Якщо компонент не вказано, використовується його значення за
+          замовчуванням.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-comment">/* Встановить лише колір фону */</span>
+   <span class="hljs-attribute">background</span>: <span class="hljs-number">#2a2a2a</span>;
+          
+<span class="hljs-comment">/* Прозорий колір фону з картинкою, що повторюється по x, починаючи з верхнього лівого кута. */</span>
+   <span class="hljs-attribute">background</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">шлях до зображення</span>) repeat-x;</pre>
+        </div>
+        <pre class="ql-blockquote" spellcheck="false">
+Рекомендується, як мінімум спочатку, використовувати окремі властивості для кожного значення, тому що зі складеною властивістю&nbsp;<code>background</code>&nbsp;можна легко заплутатися.</pre
+        >
+      </div>
+      <!--Тінь елемента-->
       <h2>Тінь елемента</h2>
+      <div>
+        <p>
+          <strong class="ql-size-large"
+            >Властивість <code>box-shadow</code></strong
+          >
+        </p>
+        <p>
+          Тінь додає елементу ефект об'єму та висоту. Порівняй, як виглядає
+          елемент без тіні та з тінню. Різниця помітна, чи не так?
+        </p>
+        <img src="./images/modul_4/shadow-intro.png" alt="box-shadow" />
+        <p>
+          Тіні бувають зовнішні та внутрішні, розмиті та плоскі, одинарні та
+          багатошарові.
+        </p>
+        <p>
+          Звісно, всі ці нюанси досконало знає дизайнер, який створює макет. Але
+          розробник має точно перенести всі ефекти макета на сторінку. Отже, він
+          також має розуміти, з чого складається тінь та як відтворити це в
+          коді.
+        </p>
+        <p>
+          Властивість&nbsp;<code>box-shadow</code>&nbsp;задає елементу одну або
+          більше тіней. За замовчуванням розмір тіні збігається з розміром
+          елемента, а її колір такий самий, як і колір його тексту.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-nix"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-params">box-shadow:</span> <span class="hljs-symbol">&lt;x-offset&gt;</span> <span class="hljs-symbol">&lt;y-offset&gt;</span> <span class="hljs-symbol">&lt;blur&gt;</span> <span class="hljs-symbol">&lt;spread&gt;</span> <span class="hljs-symbol">&lt;color&gt;</span></pre>
+        </div>
+        <ul>
+          <li>
+            <code>x-offset</code> — горизонтальне зміщення. Позитивне значення
+            зміщує тінь праворуч від блоку, негативне – ліворуч. Обов'язкове
+            значення.
+          </li>
+          <li>
+            <code>y-offset</code> — вертикальне зміщення. Позитивне значення
+            зміщує тінь вниз, негативне - вгору. Обов'язкове значення.
+          </li>
+          <li>
+            <code>blur</code> — радіус розмиття. Чим більше значення, тим
+            сильніше розмита тінь. Необов'язкове значення.
+          </li>
+          <li>
+            <code>spread</code> — радіус поширення. Позитивне значення збільшує
+            тінь, негативне — зменшує. Необов'язкове значення.
+          </li>
+          <li>
+            <code>color</code> — колір тіні. Можна використовувати будь-який
+            формат запису кольору. Необов'язкове значення.
+          </li>
+        </ul>
+        <p><strong class="ql-size-large">Багатошарова тінь</strong></p>
+        <p>
+          На один елемент можна додати кілька тіней, вказавши їх значення через
+          кому.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-nix"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-params">box-shadow:</span> <span class="hljs-symbol">&lt;x-offset&gt;</span> <span class="hljs-symbol">&lt;y-offset&gt;</span> <span class="hljs-symbol">&lt;blur&gt;</span> <span class="hljs-symbol">&lt;spread&gt;</span> <span class="hljs-symbol">&lt;color&gt;</span>,
+            <span class="hljs-symbol">&lt;x-offset&gt;</span> <span class="hljs-symbol">&lt;y-offset&gt;</span> <span class="hljs-symbol">&lt;blur&gt;</span> <span class="hljs-symbol">&lt;spread&gt;</span> <span class="hljs-symbol">&lt;color&gt;</span>,
+            <span class="hljs-symbol">&lt;x-offset&gt;</span> <span class="hljs-symbol">&lt;y-offset&gt;</span> <span class="hljs-symbol">&lt;blur&gt;</span> <span class="hljs-symbol">&lt;spread&gt;</span> <span class="hljs-symbol">&lt;color&gt;</span>,
+            ...</pre>
+        </div>
+        <p>
+          Виходить щось схоже на багатошаровий пиріг. Перша тінь у списку
+          розміщується вгорі, остання — у самому низу. Тобто кожна попередня
+          тінь зі списку розташовується на вищому шарі і візуально перекриває
+          всі наступні.
+        </p>
+        <p>Цей підхід дозволяє зробити дуже м'які та красиві тіні.</p>
+        <p><strong class="ql-size-large">Внутрішня тінь</strong></p>
+        <p>
+          Якщо зовнішня тінь візуально піднімає елемент, то внутрішня тінь
+          дозволяє додати ефект глибини, візуально заглиблюючи елемент.
+          Синтаксис оголошення внутрішньої тіні аналогічний синтаксису звичайної
+          тіні, але першим значенням необхідно вказати <code>inset</code>.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-nix"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-params">box-shadow:</span> inset <span class="hljs-symbol">&lt;x-offset&gt;</span> <span class="hljs-symbol">&lt;y-offset&gt;</span> <span class="hljs-symbol">&lt;blur&gt;</span> <span class="hljs-symbol">&lt;spread&gt;</span> <span class="hljs-symbol">&lt;color&gt;</span></pre>
+        </div>
+      </div>
+      <!--Векторна графіка-->
       <h2>Векторна графіка</h2>
+      <div>
+        <p>
+          <strong>SVG (Scalable Vector Graphics)</strong> - формат графіки та
+          мова для опису векторних зображень. Всередині файл не бінарний, а
+          звичайний текст (XML), що описує об'єкти, їх ефекти та поведінку.
+        </p>
+        <img src="./images/modul_4/4-3-1.png" alt="Raster and vector" />
+        <p>Векторна графіка має низку переваг.</p>
+        <ul>
+          <li>
+            <strong>Масштабування</strong> — на відміну від растрової графіки,
+            SVG не втрачає якості при масштабуванні.
+          </li>
+          <li>
+            <strong>Розмір файла</strong> — векторні зображення важать набагато
+            менше растрових, якщо використовуються для іконок або іншої
+            абстрактної графіки. Використання вектора для фотореалістичних
+            зображень навпаки веде до великого розміру файла.
+          </li>
+          <li>
+            <strong>Динамічність</strong> — за допомогою CSS і JavaScript можна
+            змінювати параметри векторного зображення, наприклад, колір або
+            рамки.
+          </li>
+        </ul>
+        <p>
+          Векторну графіку, так само як і растрові зображення, можна додавати за
+          допомогою елемента <code>img</code>. Достатньо вказати:
+        </p>
+        <ul>
+          <li>шлях до зображення;</li>
+          <li>текстовий опис;</li>
+          <li>інші атрибути (за потреби).</li>
+        </ul>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-abnf"
+            spellcheck="false"
+            data-highlighted="yes"
+          >&lt;img src<span class="hljs-operator">=</span><span class="hljs-string">"path/to/image.svg"</span> alt<span class="hljs-operator">=</span><span class="hljs-string">"Description"</span> /&gt;</pre>
+        </div>
+        <p>
+          Векторне зображення також може використовуватися як фон елемента у
+          властивості <code>background-image</code>.
+        </p>
+        <p>
+          З векторним фоном можна робити будь-які маніпуляції, так само, як і з
+          зображеннями растрової графіки.
+        </p>
+        <p><strong class="ql-size-large">Вбудований SVG</strong></p>
+        <p>
+          Додавання векторних зображень за допомогою елемента
+          <code>&lt;img&gt;</code> або як фону через
+          <code>background-image</code> використовується для статичної графіки,
+          наприклад, абстрактного фону або іконок, для яких не потрібно додавати
+          ефект ховеру або фокусу.&nbsp;
+        </p>
+        <p>
+          У цих методів є один істотний недолік: немає можливості динамічно
+          змінити колір або інші характеристики векторного зображення з CSS.
+        </p>
+        <p>
+          SVG-зображення можна додати повністю в HTML. Тобто відкрити SVG-файл у
+          текстовому редакторі, скопіювати вміст і вставити його в
+          HTML-документ. Це називається “<strong
+            >вбудований SVG” (inline svg)</strong
+          >.
+        </p>
+        <p>Проте цей підхід має низку обмежень.</p>
+        <ul>
+          <li>Вбудований SVG-код збільшує розмір файлу HTML.</li>
+          <li>
+            Неможливо повторно використовувати те саме зображення без дублювання
+            коду.
+          </li>
+          <li>
+            Підтримка та виправлення вбудованого SVG трудомісткі, доведеться
+            шукати його в HTML коді.
+          </li>
+          <li>
+            Браузер не може кешувати такі зображення, на відміну від зовнішніх
+            файлів SVG.
+          </li>
+        </ul>
+
+        <p>
+          <strong class="ql-size-large">Властивість <code>fill</code></strong>
+        </p>
+        <p>
+          У CSS можна динамічно змінювати деякі параметри вбудованого векторного
+          зображення, наприклад, колір. Властивість <code>fill</code> керує
+          кольором заливки. Колір можна задавати у будь-якому зручному форматі.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-comment">/* Встановлюємо колір заливки у спокійному стані. */</span>
+  <span class="hljs-selector-class">.icon</span> {
+    <span class="hljs-attribute">fill</span>: <span class="hljs-number">#2a2a2a</span>;
+}
+          
+<span class="hljs-comment">/* Змінюємо колір заливки при ховері. */</span>
+  <span class="hljs-selector-class">.icon</span><span class="hljs-selector-pseudo">:hover</span> {
+    <span class="hljs-attribute">fill</span>: <span class="hljs-number">#03a9f4</span>;
+}</pre>
+        </div>
+        <p>
+          Якщо колір заливки не вказано, фігура буде залита поточним кольором
+          тексту (за замовчуванням — чорним).
+        </p>
+        <p>
+          Прибрати заливку можна значенням <code>none</code>, в результаті чого
+          вийде повністю прозора фігура.
+        </p>
+        <p>
+          В проєкті багато іконок і логотипів. Всім їм треба задавати окремі
+          налаштування для різних станів. При цьому, треба й про роботу сторінки
+          подумати, бо кожне звернення до сервера — це час. Чи існує готове
+          рішення для цієї проблеми?
+        </p>
+        <p><strong class="ql-size-large">SVG-спрайту</strong></p>
+        <p>
+          SVG-спрайт — це техніка, яку застосовують у більшості випадків під час
+          роботи з векторною графікою.
+        </p>
+        <ul>
+          <li>Усі векторні іконки збираються до одного файлу.</li>
+          <li>
+            Файл спрайту кешується браузером і не буде завантажуватися&nbsp;при
+            повторному відвідуванні.
+          </li>
+          <li>
+            Іконкам із спрайту можна змінювати колір та інші характеристики
+            через CSS.
+          </li>
+        </ul>
+        <p><strong>Алгоритм створення SVG-спрайт</strong></p>
+        <ol>
+          <li>
+            Відкрий макет у Figma, обери там всі іконки й експортуй їх в
+            SVG-форматі на свій комп’ютер.
+          </li>
+          <li>
+            Зайди на
+            <a
+              href="https://icomoon.io/app/"
+              rel="noopener noreferrer"
+              target="_blank"
+              >icomoon.io</a
+            >
+            , натисни кнопку <strong>Import Icons</strong> зверху ліворуч та
+            додай всі іконки.
+          </li>
+          <li>
+            Натисни <strong>Generate SVG &amp; More</strong> внизу ліворуч.
+          </li>
+          <li>Натиснути <strong>Download</strong> внизу ліворуч.</li>
+        </ol>
+        <p>
+          <strong>SVG-документ</strong> - це просто текстовий файл, в якому: на
+          відміну від растрової графіки, описані фігури, які відтворюватиме
+          браузер. В одному файлі можна описати безліч різних груп фігур,
+          використовуючи елемент <code>&lt;symbol&gt;</code>, після чого,
+          задавши кожному символу унікальний <code>id</code>, звернутися до
+          будь-якого з них з HTML-документа.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-dns"
+            spellcheck="false"
+            data-highlighted="yes"
+          >&lt;svg aria-hidden="true" style="position:absolute<span class="hljs-comment">;width:0;height:0" xmlns="&lt;http://www.w3.org/2000/svg&gt;" overflow="hidden"&gt;</span>
+  &lt;defs&gt;
+    &lt;!-- Trash can icon --&gt;
+    &lt;symbol id="delete" viewBox="<span class="hljs-number">0 0 32 32</span>"&gt;
+      &lt;path d="M8 <span class="hljs-number">25.333C8</span> <span class="hljs-number">26.8 9.2</span> <span class="hljs-number">28 10.667</span> <span class="hljs-number">28h</span><span class="hljs-number">10.667c1</span>.<span class="hljs-number">467 0 2</span>.<span class="hljs-number">667-1.2</span> <span class="hljs-number">2.667-2</span>.<span class="hljs-number">667</span>v-<span class="hljs-number">16h</span>-<span class="hljs-number">16</span>v16zm17.<span class="hljs-number">333</span>-<span class="hljs-number">20h</span>-<span class="hljs-number">4.667L19</span>.<span class="hljs-number">333</span> <span class="hljs-number">4h</span>-<span class="hljs-number">6</span>.<span class="hljs-number">667</span>l-<span class="hljs-number">1.333 1</span>.<span class="hljs-number">333</span>H6.<span class="hljs-number">666V8h18</span>.<span class="hljs-number">667</span>V5.<span class="hljs-number">333</span>z" /&gt;
+    &lt;/symbol&gt;
+    &lt;!-- Camera icon --&gt;
+    &lt;symbol id="camera" viewBox="<span class="hljs-number">0 0 32 32</span>"&gt;
+      &lt;path d="M20.<span class="hljs-number">267 16a4</span>.<span class="hljs-number">267</span> <span class="hljs-number">4.267 0</span> <span class="hljs-number">11-8.534</span> <span class="hljs-number">0 4.267</span> <span class="hljs-number">4.267 0</span> <span class="hljs-number">018.534</span> <span class="hljs-number">0</span>z" /&gt;
+      &lt;path d="M12 <span class="hljs-number">2.667L9</span>.<span class="hljs-number">56</span> <span class="hljs-number">5.334H5</span>.<span class="hljs-number">333</span>a<span class="hljs-number">2.675 2</span>.<span class="hljs-number">675 0 00</span>-<span class="hljs-number">2.667 2</span>.<span class="hljs-number">667v16c0</span> <span class="hljs-number">1.467 1</span>.<span class="hljs-number">2 2.667</span> <span class="hljs-number">2.667 2</span>.<span class="hljs-number">667h</span><span class="hljs-number">21.333c1</span>.<span class="hljs-number">467 0 2</span>.<span class="hljs-number">667-1.2</span> <span class="hljs-number">2.667-2</span>.<span class="hljs-number">667</span>v-<span class="hljs-number">16</span>c<span class="hljs-number">0-1.467</span>-<span class="hljs-number">1</span>.<span class="hljs-number">2-2.667</span>-<span class="hljs-number">2.667-2</span>.<span class="hljs-number">667h</span>-<span class="hljs-number">4</span>.<span class="hljs-number">227</span>l-<span class="hljs-number">2</span>.<span class="hljs-number">44</span>-<span class="hljs-number">2</span>.<span class="hljs-number">667h</span>-<span class="hljs-number">8</span>zm4 <span class="hljs-number">20</span>c-<span class="hljs-number">3.68 0-6</span>.<span class="hljs-number">667</span>-<span class="hljs-number">2.987-6</span>.<span class="hljs-number">667</span>-<span class="hljs-number">6.667S12</span>.<span class="hljs-number">32 9.333</span> <span class="hljs-number">16 9.333</span> <span class="hljs-number">22.667 12</span>.<span class="hljs-number">32 22.667</span> <span class="hljs-number">16 19.68 22</span>.<span class="hljs-number">667 16 22</span>.<span class="hljs-number">667</span>z" /&gt;
+    &lt;/symbol&gt;
+    &lt;!-- Portfolio icon --&gt;
+    &lt;symbol id="work" viewBox="<span class="hljs-number">0 0 32 32</span>"&gt;
+      &lt;path d="M26.<span class="hljs-number">667</span> <span class="hljs-number">8h</span>-<span class="hljs-number">5.333V5</span>.<span class="hljs-number">333</span>a<span class="hljs-number">2.658 2</span>.<span class="hljs-number">658 0 00</span>-<span class="hljs-number">2.667-2</span>.<span class="hljs-number">667h</span>-<span class="hljs-number">5.333a2</span>.<span class="hljs-number">658</span> <span class="hljs-number">2.658 0</span> <span class="hljs-number">00-2.667</span> <span class="hljs-number">2</span>.<span class="hljs-number">667V8H5</span>.<span class="hljs-number">334</span>a<span class="hljs-number">2.646 2</span>.<span class="hljs-number">646 0 00</span>-<span class="hljs-number">2.653 2</span>.<span class="hljs-number">667</span>l-.<span class="hljs-number">013</span> <span class="hljs-number">14.667a2</span>.<span class="hljs-number">658</span> <span class="hljs-number">2.658 0</span> <span class="hljs-number">002.667</span> <span class="hljs-number">2.667h21</span>.<span class="hljs-number">333</span>a<span class="hljs-number">2.658 2</span>.<span class="hljs-number">658</span> <span class="hljs-number">0</span> <span class="hljs-number">002.667</span>-<span class="hljs-number">2.667V10</span>.<span class="hljs-number">667</span><span class="hljs-keyword">A</span><span class="hljs-number">2.658 2</span>.<span class="hljs-number">658</span> <span class="hljs-number">0</span> <span class="hljs-number">0026.668</span> <span class="hljs-number">8</span>zm-<span class="hljs-number">8</span> <span class="hljs-number">0h</span>-<span class="hljs-number">5.333V5</span>.<span class="hljs-number">333h</span>5.<span class="hljs-number">333</span>V8z" /&gt;
+    &lt;/symbol&gt;
+  &lt;/defs&gt;
+&lt;/svg&gt;</pre>
+        </div>
+        <p>
+          Отже, всередині SVG-спрайту є набір елементів
+          <code>&lt;svg&gt;</code> і <code>&lt;symbol&gt;</code>, що описують
+          весь SVG-спрайт цілком і кожну фігуру окремо. Кожному
+          <code>&lt;symbol&gt;</code> задано унікальний ідентифікатор.
+        </p>
+        <p>
+          Для використання іконки зі спрайту в HTML-документі необхідно додати
+          розмітку елемента <code>&lt;svg&gt;</code> і вкладеного в нього
+          елемента <code>&lt;use&gt;</code> з атрибутом <code>href</code>, в
+          якому вказаний шлях до іконки. Шлях задається як до звичайного файлу,
+          але наприкінці додається якір з ідентифікатором символу в спрайті.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-xml"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-tag">&lt;<span class="hljs-name">svg</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"./шлях-до-svg-спрайту/имʼя-спрайта.svg#ідентифікатор-символа"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span></pre>
+        </div>
+      </div>
+      <!--Псевдоелементи-->
       <h2>Псевдоелементи</h2>
+      <div>
+        <p>
+          <em
+            >Декоративні ефекти - це не завжди зображення або щось надзвичайно
+            яскраве. Вони можуть бути досить лаконічними елементами, наприклад,
+            крапки або лапки на зображенні нижче.</em
+          >
+        </p>
+        <img src="./images/modul_4/before-block.jpg" alt="before-block" />
+        <p>
+          <em
+            >Два приклади вище мають між собою спільну рису. Обидва потребують
+            розташування декоративного елемента чітко перед та після елемента. А
+            для цього маємо використовувати псевдоелементи.&nbsp;</em
+          >
+        </p>
+        <p>
+          <strong class="ql-size-large">Псевдоелементи ::before ::after</strong>
+        </p>
+        <p>
+          Псевдоелементи використовуються для додавання декоративних ефектів без
+          необхідності створення додаткових порожніх тегів у розмітці.
+        </p>
+        <img
+          src="./images/modul_4/before and after.png"
+          alt="::before and ::after"
+        />
+        <ul>
+          <li>
+            <code>::before</code> - створює псевдоелемент
+            <strong>перед</strong> всім вмістом елемента (на початку).
+          </li>
+          <li>
+            <code>::after</code> - створює псевдоелемент
+            <strong>після</strong> всього вмісту елемента (наприкінці).
+          </li>
+        </ul>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-pgsql"
+            spellcheck="false"
+            data-highlighted="yes"
+          >.box {
+  <span class="hljs-comment">/* стилі елемента */</span>
+}
+        
+.box::<span class="hljs-keyword">before</span> {
+  <span class="hljs-comment">/* стилі псевдоелемента before */</span>
+}
+        
+.box::<span class="hljs-keyword">after</span> {
+  <span class="hljs-comment">/* стилі псевдоелемента after */</span>
+}</pre>
+        </div>
+        <pre class="ql-blockquote" spellcheck="false">
+За замовчуванням псевдоелементи — це рядкові елементи. Для того, щоб задати псевдоелементу вертикальну геометрію, необхідно змінити його тип на блоковий або рядково-блоковий.</pre
+        >
+        <p>
+          Коли трапилася ситуація: “я все зробив, але псевдокласи не працюють”.
+          Перевір чи використали властивість
+          <code>content</code>. Найчастіше справа саме в цьому.&nbsp;
+        </p>
+        <p><strong class="ql-size-large">Властивість content</strong></p>
+        <p>
+          <strong>Властивість content </strong>дозволяє додати текстовий контент
+          всередину псевдоелемента. Ця властивість є обов’язковою, без неї
+          браузер просто не створить псевдоелемент. Якщо за макетом текстовий
+          контент не потрібний, його значенням необхідно поставити порожній
+          рядок.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-applescript"
+            spellcheck="false"
+            data-highlighted="yes"
+          >&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"box"</span>&gt;
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia itaque quia
+  nobis fugit amet adipisci, corrupti animi, iusto eius a sed totam voluptas
+  porro. Dolorem aliquid rerum magnam eligendi aspernatur.
+&lt;/<span class="hljs-keyword">div</span>&gt;</pre>
+        </div>
+        <p>
+          У селекторі можна використовувати лише один псевдоелемент, який має
+          додаватись після простого селектора (тега, класу, ідентифікатора).
+        </p>
+        <p>
+          Якщо потрібно встановити загальні стилі для <code>before</code> і
+          <code>after</code>, створіть окреме правило з перерахуванням
+          селекторів.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          >❌ <span class="hljs-comment">/* Некоректно оформлені загальні стилі */</span>
+  <span class="hljs-selector-class">.box</span><span class="hljs-selector-pseudo">::before</span><span class="hljs-selector-pseudo">::after</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">30px</span>;
+  }
+          
+  <span class="hljs-comment">/* Коректно */</span>
+          
+  <span class="hljs-selector-class">.box</span><span class="hljs-selector-pseudo">::before</span> {
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">'Цей текст у before'</span>;
+    <span class="hljs-attribute">color</span>: orange;
+  }
+          
+  <span class="hljs-selector-class">.box</span><span class="hljs-selector-pseudo">::after</span> {
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">'Цей текст у after'</span>;
+    <span class="hljs-attribute">color</span>: teal;
+  }
+          
+✅ <span class="hljs-comment">/* Коректно оформлені загальні стилі */</span>
+  <span class="hljs-selector-class">.box</span><span class="hljs-selector-pseudo">::before</span>, <span class="hljs-selector-class">.box</span><span class="hljs-selector-pseudo">::after</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">30px</span>;
+  }</pre>
+        </div>
+        <p>
+          Не використовуйте псевдоелементи для додавання текстового вмісту. Вони
+          служать виключно для створення декоративних ефектів. Текст усередині
+          псевдоелемента не сприймається асистивними технологіями та пошуковими
+          системами, а також буде недоступний користувачеві, якщо не
+          завантажиться файл стилів.
+        </p>
+        <p><strong class="ql-size-large">Псевдоклас&nbsp;:hover</strong></p>
+        <p>
+          Для того, щоб змінити стилі псевдоелемента при події на батьківському
+          елементі, наприклад, при наведенні миші, необхідно використовувати
+          наступний селектор.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-comment">/* Застосувати стилі до псевдоелементу .box::before при ховері на елемент .box */</span>
+  <span class="hljs-selector-class">.box</span><span class="hljs-selector-pseudo">:hover</span><span class="hljs-selector-pseudo">::before</span> {
+    <span class="hljs-attribute">background-color</span>: green;
+}
+          
+<span class="hljs-comment">/* Застосувати стилі до псевдоелементу .box::after при ховері на елемент .box */</span>
+    <span class="hljs-selector-class">.box</span><span class="hljs-selector-pseudo">:hover</span><span class="hljs-selector-pseudo">::after</span> {
+      <span class="hljs-attribute">background-color</span>: tomato;
+}</pre>
+        </div>
+        <p>Порівняй відображення елемента,</p>
+        <p>у стані спокою:</p>
+        <img src="./images/modul_4/orange-orange.png" alt="orange-orange" />
+        <p>при наведенні:</p>
+        <img src="./images/modul_4/green-red.png" alt="green-red" />
+      </div>
+      <!--Позиціоновані елементи-->
       <h2>Позиціоновані елементи</h2>
+      <div>
+        <p>
+          <em
+            >У світі, де так багато інформації, люди найбільше цінують
+            своєчасність.</em
+          >
+        </p>
+        <p>
+          <em
+            >Фото товарів у яких при наведенні спливає їх опис. Меню закріплене
+            в одному куті екрану, щоб користувач завжди міг швидко його знайти.
+            Сповіщення про акції, що відображаються прямо на карточці товару.
+            Все це зручно для відвідувачів і вигідно для клієнтів.</em
+          >
+        </p>
+        <p><em>Отже, розробник має вміти швидко реалізовувати ці кейси.</em></p>
+        <p>
+          <strong>Властивість</strong><span class="ql-size-large"> </span
+          ><code>position</code>
+        </p>
+        <p>
+          За замовчуванням елементи на сторінці розміщуються зліва направо та
+          зверху вниз. Якщо треба розташувати один елемент поверх іншого,
+          використовується властивість&nbsp;<code>position</code>. Вона дозволяє
+          буквально підняти елемент і розмістити його поверх будь-якого іншого.
+        </p>
+        <p>
+          Властивість <code>position</code> змінює тип позиціонування елемента.
+        </p>
+        <p>Є кілька основних значень властивості <code>position</code> :</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-coq"
+            spellcheck="false"
+            data-highlighted="yes"
+          >position: static | <span class="hljs-type">relative</span> | <span class="hljs-type">absolute</span> | <span class="hljs-type">fixed</span> | <span class="hljs-type">sticky</span> </pre>
+        </div>
+        <img src="./images/modul_4/position.png" alt="position" />
+        <p>За замовчуванням встановлено значення <code>static</code>.</p>
+        <p>
+          Статичне позиціонування (<code>static</code>) – це вихідний стан всіх
+          елементів веб-сторінки. Блокова модель і флексбокс мають елементи саме
+          в цьому статичному потоці сторінки.
+        </p>
+        <pre class="ql-blockquote" spellcheck="false">
+Переважна більшість елементів повинна бути розміщена відповідно до стандартного статичного потоку сторінки. Інші схеми позиціонування використовуються для декоративних ефектів у разі, коли спозиціонувати іншим способом неможливо.</pre
+        >
+        <p>
+          Елемент, значення властивості&nbsp;<code>position</code>&nbsp;якого
+          відрізняється від&nbsp;<code>static</code>, називається
+          <strong>«позиціонований елемент»</strong>.
+        </p>
+        <img
+          src="./images/modul_4/Positioned elements.png"
+          alt="Positioned elements"
+        />
+        <p>
+          Відносне (<code>relative</code>), абсолютне (<code>absolute</code>) та
+          фіксоване (<code>fixed</code>) позиціонування дозволяють підняти
+          елемент над потоком сторінки та вручну його позиціонувати,
+          використовуючи систему координат. Початок цієї системи координат
+          залежить від типу позиціонування.
+        </p>
+        <p>
+          Щоб вказати положення елемента, потрібно використати властивості
+          <code>top</code>, <code>left</code>, <code>bottom</code> або
+          <code>right</code>, які не застосовні до елементів без
+          <code>position</code>.
+        </p>
+        <p>
+          <strong class="ql-size-large">Відносне позиціонування</strong>
+          (<code>relative</code>)
+        </p>
+        <p>
+          При відносному позиціонуванні елемент залишається у потоці сторінки,
+          тобто сусідні елементи не займають його місце. Проте візуально елемент
+          можна змістити щодо його первісного&nbsp;положення. При цьому він може
+          перекривати сусідів.
+        </p>
+        <img
+          src="./images/modul_4/relative positioning.png"
+          alt="relative positioning"
+        />
+        <p>
+          Властивості&nbsp;<code>top</code>,&nbsp;<code>left</code>,&nbsp;<code>bottom</code>&nbsp;і&nbsp;<code>right</code>&nbsp;дозволяють
+          вказувати візуальне зміщення елемента відносно його вихідного
+          положення. Можуть мати негативне значення.
+        </p>
+        <img
+          src="./images/modul_4/relative element.png"
+          alt="relative element"
+        />
+        <pre class="ql-blockquote" spellcheck="false">
+Окремо відносне позиціонування не використовується через те, що елемент не вилучається з потоку сторінки, продовжуючи займати місце. Отже, відносне позиціонування використовується лише у зв'язці з абсолютним позиціонуванням.</pre
+        >
+        <p>
+          Досить часто буває, що елемент має бути “прикріпленим” до певного
+          елемента. Скажімо, текстовий опис прикріплений до зображення картки
+          товару.&nbsp;
+        </p>
+        <p>
+          <strong class="ql-size-large">Абсолютне позиціонування</strong>
+          (<code>absolute</code>)
+        </p>
+        <p>
+          Абсолютне позиціонування дає зовсім інші результати порівняно з
+          відносним.
+        </p>
+        <ol>
+          <li>
+            При абсолютному позиціонуванні елемент вилучається з потоку
+            сторінки, тобто сусідні елементи займають його місце.
+          </li>
+          <li>
+            За допомогою властивостей
+            <code>top</code
+            >,&nbsp;<code>left</code>,&nbsp;<code>bottom</code>&nbsp;і
+            <code>right</code> можна налаштувати положення елемента, але треба
+            обов’язково враховувати, звідки ведеться відлік значень цих
+            властивостей.
+          </li>
+          <li>
+            Щоб визначити точку відліку, браузер шукає найближчий
+            елемент-предок, у якого властивість <code>position</code> має
+            будь-яке значення крім <code>static</code>. Якщо такого предка не
+            виявиться, то відлік буде починатися від рамки елемента
+            <code>&lt;body&gt;</code>.
+          </li>
+        </ol>
+        <img
+          src="./images/modul_4/absolute positioning.png"
+          alt="absolute positioning"
+        />
+        <p>Саме по собі абсолютне позиціонування не має великої користі.</p>
+        <p>
+          Зазвичай, воно використовується у зв'язці з відносним для
+          декоративного позиціонування елементів. Тобто елемент «абсолютно»
+          позиціонується «відносно» якогось свого предка, який знаходиться в
+          потоці сторінки.
+        </p>
+        <img
+          src="./images/modul_4/relatively absolute positioning.png"
+          alt="relatively absolute positioning"
+        />
+        <p>
+          У цьому випадку
+          значення&nbsp;<code>top</code>,&nbsp;<code>left</code>,&nbsp;<code>bottom</code>&nbsp;і
+          <code>right</code> для абсолютно позиціонованого елемента
+          відраховуються від рамки цього предка, а не
+          від&nbsp;<code>&lt;body&gt;</code>. Отже, position: relative предка ми
+          використовуємо тільки для того, щоб абсолютно позиціонований елемент
+          розташовувався відносно цього предка.
+        </p>
+        <pre
+          class="ql-blockquote"
+          spellcheck="false"
+        >Запис <code>bottom: 20px</code> означає відстань між нижньою межею відносно позиціонованого предка і нижньою межею абсолютно позиціонованого елемента. Аналогічно працюють&nbsp;<code>right</code>,&nbsp;<code>left</code>&nbsp;і&nbsp;<code>top</code> - задається відстань між однойменними сторонами предка та елемента.</pre>
+        <p>
+          <strong class="ql-size-large">Фіксоване позиціонування</strong>
+          (<code>fixed</code>)
+        </p>
+        <p>
+          При фіксованому позиціонуванні елемент має значення
+          <code>position: fixed</code>. Такий елемент вилучається із потоку
+          сторінки та позиціонується відносно в'юпорту. Це створює ефект
+          фіксації елемента у певному місці екрана під час прокручування
+          сторінки.
+        </p>
+        <img
+          src="./images/modul_4/fixed positioning.png"
+          alt="fixed positioning"
+        />
+        <p>
+          Фіксоване позиціонування використовується для закріплених хедерів з
+          навігацією, вікон, чатів з менеджером на сторінках інтернет-магазинів,
+          тощо.
+        </p>
+        <img src="./images/modul_4/I am FIXED.gif" alt="I am FIXED" />
+        <p>
+          <strong class="ql-size-large">Липке позиціонування</strong>
+          (<code>sticky</code>)
+        </p>
+        <p>
+          Липке позиціонування (<code>position: sticky</code>) - це комбінація
+          властивостей <code>relative</code> і <code>fixed</code>. Подивись на
+          гіфку, на якій липке позиціонування задається елементам з літерами A і
+          B, так відразу стане зрозуміло.
+        </p>
+        <img
+          src="./images/modul_4/position sticky.gif"
+          alt="position: sticky"
+        />
+        <ol>
+          <li>
+            Поки елемент знаходиться у своєму контейнері, і контейнер не
+            виходить з області видимості при вертикальному прокручуванні —
+            елемент поводиться як позиціонований відносно
+            (<code>relative</code>).
+          </li>
+          <li>
+            Як тільки частина батьківського контейнера виходить із області
+            видимості, елемент фіксується на сторінці до тих пір, поки хоча б
+            якась частина контейнера присутня на екрані.
+          </li>
+          <li>
+            Якщо весь контейнер вийде з області видимості, то знову увімкнеться
+            поведінка як при відносному позиціонуванні — елемент зникне з екрану
+            за контейнером.
+          </li>
+        </ol>
+        <p>Для реалізації липкого позиціонування необхідні лише три умови:</p>
+        <ul>
+          <li>
+            Липкому елементу необхідно задати позиціонування
+            <code>position: sticky</code>.
+          </li>
+          <li>
+            У липкого елемента має бути задане положення, наприклад,
+            <code>top: 0</code>.
+          </li>
+          <li>
+            Елемент-контейнер має бути більшим за висотою, ніж липкий елемент.
+          </li>
+        </ul>
+        <p><strong class="ql-size-large">Властивість z-index</strong></p>
+        <p>
+          До початку вивчення позиціонованих елементів нам не доводилося
+          стикатися з проблемами глибини. Ми розташовували елементи в
+          двовимірній системі координат — <code>x</code> по горизонталі і
+          <code>y</code> по вертикалі. Порядок відображення задавався виключно
+          вкладеністю елементів — предок розташовувався внизу, подібно до аркуша
+          паперу, а нащадок — немов новий аркуш паперу, який лягає зверху.
+        </p>
+        <p>
+          Позиціоновані елементи поводяться інакше. Вони випадають з потоку, а
+          значить для них потрібно правило, яке визначатиме який елемент
+          знаходиться вище, а який нижче на осі <code>z</code> (осі, що
+          перпендикулярна до площини екрану).
+        </p>
+        <p>
+          Це правило задає властивість <code>z-index</code>, яке контролює
+          глибину (порядок) позиціонованих елементів на сторінці по осі
+          <code>z</code> від очей користувача і до екрану. У якості значення
+          може бути будь-яке ціле число, у тому числі негативне.
+        </p>
+        <img
+          src="./images/modul_4/position z-index.png"
+          alt="position z-index"
+        />
+        <p>
+          Загальний предок позиціонованих елементів створює
+          <strong>контекст</strong> (stacking context) — область, в якій
+          властивість <code>z-index</code> елемента впливає на інші елементи
+          <code>z-index</code>.
+        </p>
+        <p>Що треба знати при використанні <code>z-index</code>:</p>
+        <ol>
+          <li>
+            Чим більше значення <code>z-index</code> всередині цього контексту,
+            тим вище розташовується елемент.
+          </li>
+          <li>
+            Мінімальне (навіть негативне) значення <code>z-index</code> говорить
+            про те, що інші елементи поза потоком будуть розташовані вище цього
+            елементу.&nbsp;
+          </li>
+          <li>
+            Якщо у двох елементів однакові значення <code>z-index</code>, вищим
+            буде елемент, оголошений останнім у HTML-коді.
+          </li>
+        </ol>
+        <img
+          src="./images/modul_4/z-index position.png"
+          alt="z-index position"
+        />
+        <p>
+          <strong>Порівняй значення властивості </strong
+          ><code><strong>z-index</strong></code
+          ><strong> у живому прикладі та у відображенні в браузері</strong>
+        </p>
+        <img
+          src="./images/modul_4/position z-index exempel.png"
+          alt="position z-index exempel"
+        />
+      </div>
+      <!--CSS-переходи-->
       <h2>CSS-переходи</h2>
-      <h2>2D-трансформації</h2>
+      <div></div>
+      <!--<h2>2D-трансформації</h2>
       <h2>План виконання ДЗ 4</h2>
       <h2>Домашнє завдання</h2>
     </section> -->
-    <!--Модуль 5. Елементи форм. Доступність-->
-    <!-- <h1>Модуль 5. Елементи форм. Доступність</h1>
+      <!--Модуль 5. Елементи форм. Доступність-->
+      <!-- <h1>Модуль 5. Елементи форм. Доступність</h1>
     <section>
       <h2>Програма модулю</h2>
       <h2>Форми</h2>
@@ -992,8 +2152,8 @@ mango@mail.pig <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt
       <h2>Створення модального вікна</h2>
       <h2>Домашнє завдання</h2>
     </section> -->
-    <!--Модуль 6. Адаптивний дизайн-->
-    <!-- <h1>Модуль 6. Адаптивний дизайн</h1>
+      <!--Модуль 6. Адаптивний дизайн-->
+      <!-- <h1>Модуль 6. Адаптивний дизайн</h1>
     <section>
       <h2>Програма модуля</h2>
       <h2>Респонсивні сторінки</h2>
@@ -1001,7 +2161,7 @@ mango@mail.pig <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt
       <h2>Логічні оператори</h2>
       <h2>Підхід «Mobile First»</h2>
       <h2>Адаптивна графіка</h2>
-      <h2>Домашнє завдання</h2>
-    </section> -->
+      <h2>Домашнє завдання</h2>-->
+    </section>
   </body>
 </html>
