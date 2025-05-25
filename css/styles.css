@@ -44,6 +44,11 @@ h3 {
   padding-bottom: 10px;
 }
 
+.ql-custom-iframe {
+  width: 100vh;
+  height: 500px;
+}
+
 code {
   background-color: rgba(135, 131, 120, 0.15);
   padding: 2px 2px;

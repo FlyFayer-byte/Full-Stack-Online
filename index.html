@@ -2135,10 +2135,621 @@ background: background-color background-image background-repeat background-posit
       </div>
       <!--CSS-переходи-->
       <h2>CSS-переходи</h2>
-      <div></div>
-      <!--<h2>2D-трансформації</h2>
+      <div>
+        <p><strong class="ql-size-large">Що таке CSS-перехід?</strong></p>
+        <p>
+          CSS-переходи дозволяють анімувати зміну значення властивостей,
+          задавати час та керувати швидкістю цього переходу. Зміна властивостей
+          відбувається при певній події, наприклад: <code>:hover</code>.
+        </p>
+        <p>
+          Перехід завжди має тільки два стани: 1) початкове і 2) кінцеве
+          значення властивості, і вміє змінювати це значення
+          <code>A &gt; B</code> і <code>B &gt; A</code> за вказаний час.
+        </p>
+        <p>
+          Для анімацій, де кількість станів перевищує 2, необхідно
+          використовувати анімацію CSS.
+        </p>
+        <img src="./images/modul_4/CSS-перехід.png" alt="CSS-перехід" />
+        <p>Наступні чотири властивості керують різними параметрами переходу.</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-xml"
+            spellcheck="false"
+            data-highlighted="yes"
+          >transition-property: <span class="hljs-tag">&lt;<span class="hljs-name">властивість</span>&gt;</span>
+transition-duration: <span class="hljs-tag">&lt;<span class="hljs-name">час</span>&gt;</span>
+transition-timing-function: <span class="hljs-tag">&lt;<span class="hljs-name">функція</span> <span class="hljs-attr">розподілу</span> <span class="hljs-attr">часу</span>&gt;</span>
+transition-delay: <span class="hljs-tag">&lt;<span class="hljs-name">затримка</span>&gt;</span></pre>
+        </div>
+        <p>У цьому блоці ми детально розберемо кожне з них.</p>
+        <p>Все, що необхідно зробити для налаштування переходу, це:</p>
+        <ol>
+          <li>
+            Вказати початкові значення властивостей, що анімуються, і значення
+            властивостей переходу.
+          </li>
+          <li>
+            Після чого при події, наприклад,&nbsp;<code>:hover</code>, задати
+            нові значення властивостей, до яких ми хочемо анімувати елемент.
+          </li>
+        </ol>
+        <p>
+          <strong class="ql-size-large"
+            >Властивість <code>transition-property</code></strong
+          >
+        </p>
+        <p>
+          Властивість <code>transition-property</code> задає властивості, до
+          яких буде застосовано ефект переходу. Значенням може бути одна
+          властивість або список властивостей через кому.
+        </p>
+        <p>
+          Значення за замовчуванням — <code>all</code>, тобто анімуються всі
+          можливі властивості.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-maxima"
+            spellcheck="false"
+            data-highlighted="yes"
+          >.<span class="hljs-built_in">box</span> {
+  <span class="hljs-built_in">background</span>-<span class="hljs-built_in">color</span>: teal;
+  transition-property: <span class="hljs-built_in">background</span>-<span class="hljs-built_in">color</span>;
+}
+        
+.<span class="hljs-built_in">box</span>:hover {
+  <span class="hljs-built_in">background</span>-<span class="hljs-built_in">color</span>: orange;
+}</pre>
+        </div>
+        <pre
+          class="ql-blockquote"
+          spellcheck="false"
+        ><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties" rel="noopener noreferrer" target="_blank">Список властивостей, які можуть бути анімовані, в майбутньому може змінитися.</a> Тому обов'язково необхідно вказувати властивість, яку потрібно анімувати, інакше будуть анімовані всі можливі властивості елемента, що призведе до несподіваних результатів.</pre>
+        <p>
+          <span style="color: rgb(55, 53, 47)"
+            >Якщо потрібно задати більш ніж одну властивість, то вони вказуються
+            через кому.</span
+          >
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-selector-class">.box</span> {
+  <span class="hljs-attribute">color</span>: orange;
+  <span class="hljs-attribute">background-color</span>: teal;
+  <span class="hljs-attribute">transition-property</span>: color, background-color;
+}
+        
+<span class="hljs-selector-class">.box</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">background-color</span>: orange;
+  <span class="hljs-attribute">color</span>: white;
+}</pre>
+        </div>
+        <p>
+          <strong class="ql-size-large"
+            >Властивість <code>transition-duration</code></strong
+          >
+        </p>
+        <p>
+          Якщо тривалість переходу не вказана, зміна значень відбудеться
+          миттєво, без анімації.
+          Властивість&nbsp;<code>transition-duration</code>&nbsp;задає проміжок
+          часу, протягом якого має здійснитися перехід.
+        </p>
+        <p>Значення властивості вказується в:</p>
+        <ul>
+          <li>секундах: <code>2s</code>&nbsp;або&nbsp;<code>0.5s</code></li>
+          <li>
+            мілісекундах: <code>2000ms</code>&nbsp;або&nbsp;<code>500ms</code>
+          </li>
+        </ul>
+        <p>
+          Якщо різні властивості мають різні значення часу переходу, всі вони
+          перераховуються через кому.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-selector-class">.box</span> {
+  <span class="hljs-attribute">background-color</span>: teal;
+  <span class="hljs-attribute">transition-property</span>: background-color;
+  <span class="hljs-attribute">transition-duration</span>: <span class="hljs-number">1000ms</span>;
+}
+        
+<span class="hljs-selector-class">.box</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">background-color</span>: orange;
+}</pre>
+        </div>
+        <p>
+          <strong class="ql-size-large"
+            >Властивість <code>transition-timing-function</code></strong
+          >
+        </p>
+        <p>
+          Властивість <code><strong>transition-timing-function</strong></code
+          ><strong> </strong>задає функцію розподілу часу, тобто поведінку
+          анімації.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-selector-class">.box</span> {
+  <span class="hljs-attribute">background-color</span>: teal;
+  <span class="hljs-attribute">transition-property</span>: background-color;
+  <span class="hljs-attribute">transition-duration</span>: <span class="hljs-number">1000ms</span>;
+  <span class="hljs-attribute">transition-timing-function</span>: linear;
+}
+        
+<span class="hljs-selector-class">.box</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">background-color</span>: orange;
+}</pre>
+        </div>
+        <p>
+          Значення властивості задається через формулу Безьє, яка описує
+          швидкість переходу властивості від одного значення до іншого за час,
+          зазначений в <code>transition-duration</code>,
+        </p>
+        <p>
+          У CSS є кілька ключових слів для опису базових функцій Безьє, що часто
+          використовуються.
+        </p>
+        <p>Ключові слова:</p>
+        <ul>
+          <li>
+            <code>ease</code> - перехід починається повільно, швидко
+            прискорюється, а потім знову сповільнюється в кінці.
+          </li>
+          <li><code>linear</code> - перехід має рівномірну швидкість.</li>
+          <li>
+            <code>ease-in</code> - починається повільно, швидкість переходу
+            збільшується до повного завершення переходу.
+          </li>
+          <li>
+            <code>ease-out</code> - починається швидко, уповільнюється протягом
+            переходу.
+          </li>
+          <li>
+            <code>ease-in-out</code> - починається повільно, прискорюється, а
+            потім знову сповільнюється.
+          </li>
+        </ul>
+        <p>За замовчуванням використовується значення <code>ease</code>.</p>
+        <p>
+          <strong class="ql-size-large"
+            >Властивість <code>transition-delay</code></strong
+          >
+        </p>
+        <p>
+          Властивість <code>transition-delay</code> визначає затримку, після
+          якої розпочинається анімація переходу. За замовчуванням встановлено
+          значення <code>0s</code>.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-attribute">transition-delay</span>: значення;</pre>
+        </div>
+        <p>
+          <strong class="ql-size-large"
+            >Властивість <code>transition</code></strong
+          >
+        </p>
+        <p>
+          Всі властивості переходу можна поєднати в одну складову властивість
+          <code>transition</code>.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-inform7"
+            spellcheck="false"
+            data-highlighted="yes"
+          >transition: <span class="hljs-comment">[property]</span> <span class="hljs-comment">[duration]</span> <span class="hljs-comment">[timing-function]</span> <span class="hljs-comment">[delay]</span></pre>
+        </div>
+        <p>
+          Якщо анімується кілька властивостей, то набір значень кожної з них
+          розділяється комою.
+        </p>
+        <p>Необхідно обов'язково вказати властивість та час переходу.</p>
+        <p>
+          Функцію часу та затримку можна не вказувати — тоді для них буде
+          використано значення за замовчуванням.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-maxima"
+            spellcheck="false"
+            data-highlighted="yes"
+          >transition: <span class="hljs-built_in">background</span>-<span class="hljs-built_in">color</span> 500ms <span class="hljs-built_in">linear</span>, <span class="hljs-built_in">transform</span> 500ms ease-<span class="hljs-keyword">in</span>-out;</pre>
+        </div>
+      </div>
+      <!--2D-трансформації-->
+      <h2>2D-трансформації</h2>
+      <div>
+        <p>
+          <em
+            >CSS-переходи, CSS-анімації, а тепер ще й 2D трансформації. Як це
+            все розрізняти?</em
+          >
+        </p>
+        <p>
+          <em
+            >CSS-переходи і CSS-анімації відрізняються кількістю налаштованих
+            станів. 2D-трансформації — це зовсім інша справа. Вони не про “</em
+          ><strong><em>як”</em></strong
+          ><em> (2 стани чи багато кадрів), а про то “</em
+          ><strong><em>які властивості”</em></strong
+          ><em> змінюються.</em>
+        </p>
+        <p>
+          <em
+            >2D-трансформації змінюють елементи у двовимірному просторі та
+            можуть використовуватися і в CSS-переходах, і в CSS-анімації. А ще
+            вони добре сприймаються браузером!</em
+          >
+        </p>
+        <p><strong class="ql-size-huge">Масштабування</strong></p>
+        <p>
+          CSS-трансформації дозволяють зміщувати, повертати елементи та
+          змінювати їх масштаб — тобто додавати декоративні ефекти.
+          Трансформації змінюють форму та положення елемента, не впливаючи на
+          інші елементи сторінки. За замовчуванням трансформація відбувається
+          відносно центру елемента.
+        </p>
+        <p>
+          Властивість <code>transform</code> відповідає за застосування однієї
+          або більше трансформацій елемента.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-pf"
+            spellcheck="false"
+            data-highlighted="yes"
+          >transform: <span class="hljs-keyword">none</span> | <span class="hljs-variable">&lt;тип трансформації&gt;</span> <span class="hljs-variable">&lt;тип трансформації&gt;</span> ...</pre>
+        </div>
+        <p>
+          <strong>Трансформований елемент</strong> - це елемент, що має будь-яке
+          значення властивості <code>transform</code>, відмінне від
+          <code>none</code>.
+        </p>
+        <p>
+          Функції <code>scaleX(tx)</code>, <code>scaleY(ty)</code> і
+          <code>scale(tx, ty)</code> масштабують блок по ширині та/або висоті,
+          не впливаючи на геометрію навколишніх елементів. Якщо для
+          <code>scale()</code> задано певне значення, друге буде таким самим.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-selector-class">.box</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1.15</span>);
+}</pre>
+        </div>
+        <p>Початковий масштаб елемента - <code>1</code>.</p>
+        <p>
+          Значення від <code>1</code> до <code>0</code> зменшують елемент.
+          Значення більше ніж <code>1</code>, навпаки, збільшують.
+        </p>
+        <p>
+          Наприклад, значення&nbsp;<code>scale(1.25)</code>&nbsp;— це 125% від
+          початкового розміру, а&nbsp;<code>scale(0.75)</code>&nbsp;— 75%.
+        </p>
+        <pre
+          class="ql-blockquote"
+          spellcheck="false"
+        >З усіх <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties" rel="noopener noreferrer" target="_blank">властивостей, які можуть бути анімовані,</a> рекомендується, по можливості, використовувати всього дві: <code>opacity</code> (прозорість) і <code>transform</code> (трансформація). У більшості випадків анімація інших властивостей значно не вплине на продуктивність сторінки, але краще дотримуватися цього правила, щоб створювати максимально продуктивну анімацію.</pre>
+        <p><strong class="ql-size-large">Поворот</strong></p>
+        <p>
+          Функція&nbsp;<code>rotate(кут)</code>&nbsp;повертає елементи на задану
+          кількість градусів (одиниця&nbsp;<code>deg</code>). Позитивні значення
+          повертають елемент за годинниковою стрілкою, негативні — проти.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-selector-class">.box</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">45deg</span>);
+}</pre>
+        </div>
+        <p>
+          Значення можна передати не лише в градусах, а й в «обертах» (одиниця
+          <code>turn</code>). Наприклад, <code>rotate(0.5turn)</code> — це
+          півоберту, аналог <code>rotate(180deg)</code>.
+        </p>
+
+        <iframe
+          src="https://codepen.io/goit-academy/embed/BajPxRa?default-tab=css,result"
+          class="ql-custom-iframe"
+          id="q9ops"
+          allowfullscreen="true"
+          groupid="35474143"
+          courseid="17039071"
+          moduleid="17039127"
+          block="[object Object]"
+          element="[object Object]"
+          userinfo="[object Object]"
+        ></iframe>
+        <p><strong class="ql-size-huge">Зміщення</strong></p>
+        <p>
+          Функції&nbsp;<code>translateX(tx)</code>,&nbsp;<code>translateY(ty)</code>&nbsp;і&nbsp;<code
+            >translate(tx, ty)</code
+          >&nbsp;переміщають елемент у
+        </p>
+        <p>
+          горизонтальному (вісь X) та/або вертикальному (вісь Y) напрямках щодо
+          початкового положення.
+        </p>
+        <ul>
+          <li>
+            Позитивні значення X зміщують елемент праворуч, негативні — ліворуч.
+          </li>
+          <li>
+            Позитивні значення Y зміщують елемент вниз, негативні — вгору.
+          </li>
+        </ul>
+        <img src="./images/modul_4/Frame 48414.jpg" alt="Frame" />
+        <p>
+          Значення можуть бути у пікселях чи відсотках. Якщо значення задано у
+          відсотках, воно розраховується від розміру зміщуваного елемента.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-selector-class">.box</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(<span class="hljs-number">100px</span>, <span class="hljs-number">200px</span>);
+}</pre>
+        </div>
+
+        <iframe
+          src="https://codepen.io/goit-academy/embed/OJMwzYX?default-tab=css,result"
+          class="ql-custom-iframe"
+          id="0i70t"
+          allowfullscreen="true"
+          groupid="35474143"
+          courseid="17039071"
+          moduleid="17039127"
+          block="[object Object]"
+          element="[object Object]"
+          userinfo="[object Object]"
+        ></iframe>
+        <p><strong class="ql-size-large">Декоративний оверлей</strong></p>
+        <p>
+          Зміщення та властивість&nbsp;<code>overflow</code> зі
+          значенням&nbsp;<code>hidden</code> використовуються при створенні
+          декоративних ефектів з появою прихованого вмісту з-за меж блоку.
+        </p>
+        <p>Переглянь живий приклад, щоб побачити, як це працює у браузері.</p>
+        <iframe
+          src="https://codepen.io/goit-academy/embed/rNxrGMQ?default-tab=html%2Cresult"
+          class="ql-custom-iframe"
+          id="5pn4a"
+          allowfullscreen="true"
+          groupid="35474143"
+          courseid="17039071"
+          moduleid="17039127"
+          block="[object Object]"
+          element="[object Object]"
+          userinfo="[object Object]"
+        ></iframe>
+        <p>
+          Такий ефект реалізується за кілька простих кроків. Розберемо стилі для
+          створення ефекту. Повний код дивись у живому прикладі.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-applescript"
+            spellcheck="false"
+            data-highlighted="yes"
+          >&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"box"</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"overlay"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;</pre>
+        </div>
+        <p>
+          Спочатку абсолютно
+          позиціонуємо&nbsp;<code>div.overlay</code>&nbsp;відносно
+          <code>div.box</code>&nbsp;і розтягуємо його на всю ширину і
+          висоту&nbsp;<code>div.box</code>.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-selector-class">.box</span> {
+  <span class="hljs-attribute">position</span>: relative;
+}
+        
+<span class="hljs-selector-class">.overlay</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+}</pre>
+        </div>
+        <p>
+          Використовуючи
+          властивість&nbsp;<code>transform</code>&nbsp;і&nbsp;<code>translateX</code>,
+          зміщуємо&nbsp;<code>div.overlay</code>&nbsp;ліворуч на 100% його
+          ширини.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-selector-class">.overlay</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+        
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(-<span class="hljs-number">100%</span>);
+}</pre>
+        </div>
+        <p>
+          При ховері по&nbsp;<code>div.box</code>,
+          використовуючи&nbsp;<code>transform</code>&nbsp;і&nbsp;<code>translateX</code>,
+          повертаємо&nbsp;<code>div.overlay</code>&nbsp;у вихідне положення.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-stylus"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-selector-class">.box</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-class">.overlay</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(<span class="hljs-number">0</span>);
+}</pre>
+        </div>
+        <p>
+          Задаємо&nbsp;<code>div.box</code>
+          властивість&nbsp;<code>overflow</code>&nbsp;зі
+          значенням&nbsp;<code>hidden</code>, щоб візуально сховати&nbsp;<code
+            >div.overlay</code
+          >
+          при зміщенні за межі&nbsp;<code>div.box</code>.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-selector-class">.box</span> {
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">overflow</span>: hidden;
+}</pre>
+        </div>
+        <p>
+          Додаємо&nbsp;<code>div.overlay</code>&nbsp;перехід для анімації
+          властивості&nbsp;<code>transform</code>, тим самим анімуємо появу
+          оверлею.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-selector-class">.overlay</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+        
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(-<span class="hljs-number">100%</span>);
+  <span class="hljs-attribute">transition</span>: transform <span class="hljs-number">250ms</span> ease-in-out;
+}</pre>
+        </div>
+        <p><strong class="ql-size-large">Центрування елемента</strong></p>
+        <p>
+          Розглянемо прийом, що дозволяє розташувати абсолютно позиціонований
+          елемент точно по центру блока, відносно якого він позиціонується.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-applescript"
+            spellcheck="false"
+            data-highlighted="yes"
+          >&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"parent"</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"box"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;</pre>
+        </div>
+        <p>Техніка дуже проста і складається із трьох кроків.</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-selector-class">.parent</span> {
+  <span class="hljs-attribute">position</span>: relative;
+}
+        
+<span class="hljs-selector-class">.box</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(-<span class="hljs-number">50%</span>, -<span class="hljs-number">50%</span>);
+}</pre>
+        </div>
+        <ol>
+          <li>Абсолютно позиціонуємо елемент відносно предка.</li>
+          <li>
+            Задаємо елементу
+            властивості&nbsp;<code>top</code>&nbsp;і&nbsp;<code>left</code>&nbsp;зі
+            значенням&nbsp;<code>50%</code>, щоб розташувати верхній лівий кут
+            елемента рівно по центру предка.
+          </li>
+          <li>
+            Задаємо елементу негативне зміщення (translate) по 50% висоти і
+            ширини. Це змістить елемент вгору і вліво і відцентрує всередині
+            предка.
+          </li>
+        </ol>
+        <p>Розглянь живий приклад, щоб побачити, як це виглядає на сторінці.</p>
+        <iframe
+          src="https://codepen.io/goit-academy/embed/KKVBByO?default-tab=css,result"
+          class="ql-custom-iframe"
+          id="531wb"
+          allowfullscreen="true"
+          groupid="35474143"
+          courseid="17039071"
+          moduleid="17039127"
+          block="[object Object]"
+          element="[object Object]"
+          userinfo="[object Object]"
+        ></iframe>
+        <p><strong class="ql-size-large">Викривлення</strong></p>
+        <p>
+          Функції&nbsp;<code>skewX(кут)</code>,&nbsp;<code>skewY(кут)</code>&nbsp;і&nbsp;<code
+            >skew(x-кут, y-кут)</code
+          >&nbsp;використовуються для визначення параметрів викривлення (нахилу,
+          деформування) сторін елемента відносно координатних осей. Якщо
+          для&nbsp;<code>skew()</code>&nbsp;вказано тільки одне значення, друге
+          буде дорівнювати&nbsp;<code>0</code>, тобто це буде
+          аналог&nbsp;<code>skewX()</code>.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-css"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-selector-class">.box</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">skew</span>(<span class="hljs-number">30deg</span>);
+}</pre>
+        </div>
+        <iframe
+          src="https://codepen.io/goit-academy/embed/oNbMqgY?default-tab=css,result"
+          class="ql-custom-iframe"
+          id="ckexj"
+          allowfullscreen="true"
+          groupid="35474143"
+          courseid="17039071"
+          moduleid="17039127"
+          block="[object Object]"
+          element="[object Object]"
+          userinfo="[object Object]"
+        ></iframe>
+      </div>
+      <!--План виконання ДЗ 4-->
       <h2>План виконання ДЗ 4</h2>
-      <h2>Домашнє завдання</h2>
+
+      <!--<h2>Домашнє завдання</h2>
     </section> -->
       <!--Модуль 5. Елементи форм. Доступність-->
       <!-- <h1>Модуль 5. Елементи форм. Доступність</h1>
