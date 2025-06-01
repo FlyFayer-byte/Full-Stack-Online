@@ -3,17 +3,44 @@
 <html lang="uk">
   <!-- Початок HTML-документа, атрибут lang="uk" вказує мову сторінки — українську -->
   <head>
-    <!-- Розділ для службової інформації (заголовок сторінки, кодування, стилі тощо) -->
     <meta charset="UTF-8" />
-    <!-- Вказує кодування символів — UTF-8 підтримує українські літери -->
+    <!-- Вказує кодування символів для документа, UTF-8 підтримує українські літери -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Для адаптивного дизайну на мобільних пристроях -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- Підключення зовнішнього CSS-файлу для стилізації сторінки -->
     <title>Fullstack developer</title>
     <!-- Назва сторінки у вкладці браузера -->
   </head>
   <body>
     <!-- Основний вміст сторінки, який бачить користувач -->
     <!-- Тут буде розміщено меню, розділи та контент -->
+    <aside class="sidebar-menu">
+      <!-- Бокова панель навігації -->
+      <div class="sidebar-wrapper">
+        <ul class="sidebar-list">
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="#">Основи HTML</a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="#">Вступ до CSS</a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="#">Блокова модель</a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="#">Декоративні ефекти</a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="#">Елементи форм</a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="#">Адаптивний дизайн</a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <section class="container"></section>
   </body>
 </html>
 <!-- Кінець HTML-документа -->
