@@ -1,17 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--  Визначає тип документа як HTML5 -->
+<!-- Встановити мову документа на українську -->
+<html lang="ua">
   <head>
+    <!-- Встановити кодування символів для документа -->
     <meta charset="UTF-8" />
+    <!-- Встановити масштабування для мобільних пристроїв -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
+    />
+    <!-- Підключити Modern Normalize для скидання стилів -->
     <link rel="stylesheet" href="./css/styles.css" />
+    <!-- Підключити стилі для сторінки -->
     <title>Fullstack Online</title>
   </head>
   <body>
+    <!----------Header Container---------->
+    <aside class="menu"> <!-- Бокова панель навігації -->
+      <div>
+        <ul class="menu-list">
+          <li>
+            <a class="header-list-item" href="#menu-item--html-basics"
+              >Основи HTML</a
+            >
+          </li>
+          <li>
+            <a class="header-list-item" href="#menu-item--css-intro"
+              >Вступ до CSS</a
+            >
+          </li>
+          <li>
+            <a class="header-list-item" href="#menu-item--box-model"
+              >Блокова модель</a
+            >
+          </li>
+          <li>
+            <a class="header-list-item" href="#menu-item--effects"
+              >Декоративні ефекти</a
+            >
+          </li>
+          <li>
+            <a class="header-list-item" href="#menu-item--form-elements"
+              >Елементи форм</a
+            >
+          </li>
+          <li>
+            <a class="header-list-item" href="#menu-item--responsive"
+              >Адаптивний дизайн</a
+            >
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <h1>Fullstack developer</h1>
     <!--Модуль 1. Основи HTML-->
+    <section class="container">
+      <div>
+        <h2 class="container-title">Основи HTML</h2>
+      </div>
+    </section>
+
     <h1>Модуль 1. Основи HTML</h1>
     <section>
       <!--Веб-технології-->
-      <h2>Веб-технології</h2>
+      <h2 id="menu-item--html-basics">Веб-технології</h2>
       <div>
         <!--Веб-технології HTML, CSS, JS-->
         <h3>Веб-технології HTML, CSS, JS</h3>

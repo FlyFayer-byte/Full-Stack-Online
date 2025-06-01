@@ -3,7 +3,7 @@
 }
 
 body {
-  margin: 0 20px;
+  margin: 0;
   min-height: 100vh;
   background-color: #f9f9fd;
   line-height: 1.5;
@@ -97,4 +97,51 @@ img {
   background-color: rgb(236, 244, 248);
   overflow: visible;
   white-space: pre-wrap;
+}
+
+/*----------Global Container----------*/
+/* Обнулюємо дефолтні маржини від браузера для заголовків та параграфів тексту */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+/* Обнулюємо дефолтні маржини та лівий падінг для списків */
+ul {
+  margin: 0;
+  list-style-type: none;
+  padding-left: 0;
+}
+/* Скидаємо дефолтне підкреслення для посилань */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  margin-left: 250px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  border: 1px solid #03a9f4;
+}
+/*----------Aside menu----------*/
+.menu {
+  width: 250px;
+  height: 100vh;
+  background-color: #f9f9fd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  border-right: 1px solid #03a9f4;
+}
+section {
+  margin-left: 250px;
+  padding: 0 20px;
 }
