@@ -27,22 +27,22 @@
       <div class="sidebar-wrapper">
         <ul class="sidebar-list">
           <li class="sidebar-item">
-            <a class="sidebar-link" href="#">Основи HTML</a>
+            <a class="sidebar-link" href="#modul-1">Основи HTML</a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="#">Вступ до CSS</a>
+            <a class="sidebar-link" href="#modul-2">Вступ до CSS</a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="#">Блокова модель</a>
+            <a class="sidebar-link" href="#modul-3">Блокова модель</a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="#">Декоративні ефекти</a>
+            <a class="sidebar-link" href="#modul-4">Декоративні ефекти</a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="#">Елементи форм</a>
+            <a class="sidebar-link" href="#modul-5">Елементи форм</a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="#">Адаптивний дизайн</a>
+            <a class="sidebar-link" href="#modul-6">Адаптивний дизайн</a>
           </li>
         </ul>
       </div>
@@ -50,11 +50,126 @@
     <section class="container">
       <!-- Основний контейнер для контенту сторінки -->
       <h1 class="side-title">Fullstack developer</h1>
-      <!-- Заголовок сторінки -->
+
+      <!-- Модуль 1. Основи HTML -->
       <div class="container-content">
         <!-- Основний контент -->
-        <h2 class="container-title">Основи HTML</h2>
+        <h2 id="modul-1" class="container-title">Модуль 1. Основи HTML</h2>
         <!-- Розділ з основами HTML -->
+      </div>
+
+      <!-- Модуль 2. Вступ до CSS -->
+      <div class="container-content">
+        <!-- Основний контент -->
+        <h2 id="modul-2" class="container-title">Модуль 2. Вступ до CSS</h2>
+        <!-- Розділ з основами HTML -->
+      </div>
+
+      <!-- Модуль 3. Блокова модель. Flexbox -->
+      <div class="container-content">
+        <!-- Основний контент -->
+        <h2 id="modul-3" class="container-title">
+          Модуль 3. Блокова модель. Flexbox
+        </h2>
+        <!-- Розділ з основами HTML -->
+      </div>
+
+      <!-- Модуль 4. Декоративні ефекти -->
+      <div class="container-content">
+        <!-- Основний контент -->
+        <h2 id="modul-4" class="container-title">
+          Модуль 4. Декоративні ефекти
+        </h2>
+        <!-- Розділ з основами HTML -->
+      </div>
+
+      <!-- Модуль 5. Елементи форм. Доступність -->
+      <div class="container-content">
+        <!-- Основний контент -->
+        <h2 id="modul-5" class="container-title">
+          Модуль 5. Елементи форм. Доступність
+        </h2>
+        <div>
+          <h3>Програма модулю</h3>
+
+          <h4>Цілі модуля 5:</h4>
+          <ul>
+            <li>розуміти що таке і як працюють HTML-форми</li>
+            <li>
+              розрізняти основні типи елементів у формах (form, label, input
+              тощо)
+            </li>
+            <li>стилізувати форми на сторінці</li>
+            <li>вміти групувати пов'язані елементи форм</li>
+            <li>створювати різні типи форм</li>
+            <li>
+              застосовувати набір спеціальних псевдокласів для елементів форм
+            </li>
+          </ul>
+
+          <h3>Форми</h3>
+          <p>
+            HTML-форми — це елементи веб-сторінки, які дозволяють користувачам
+            вводити дані та надсилати їх на сервер для обробки. Вони складаються
+            з різних елементів, таких як текстові поля, кнопки, списки тощо.
+          </p>
+          <h4>HTML-форма</h4>
+          <p>
+            HTML-форма — це контейнер для елементів, які дозволяють користувачам
+            вводити дані. Вона визначається тегом <code>&lt;form&gt;</code>.
+            Атрибут <code>action</code> вказує URL, куди будуть надіслані дані
+            форми, а атрибут <code>method</code> визначає метод надсилання даних
+            (наприклад, GET або POST).
+          </p>
+          <p>
+            Форми на веб-сторінці — це аналог паперової форми, анкети чи бланка.
+            Вони дозволяють отримувати інформацію від відвідувачів веб-сторінки.
+            Списки розсилки, контактні дані, профіль користувача, логін і
+            реєстрація, коментарі в блогах — усе це реалізується за допомогою
+            форм та їх елементів.
+          </p>
+          <img src="./images/modul_5/Frame 48434.jpg" alt="HTML-форма" />
+          <p>Функціональна HTML-форма складається з двох частин:</p>
+          <ol>
+            <li>Інтерфейс користувача (фронтенд сторінки).</li>
+            <li>Сервер (бекенд сторінки).</li>
+          </ol>
+          <p>
+            Перше – це зовнішній вигляд форми (розмітка та оформлення).<br />
+            Друге – код обробки введених даних (валідація, зберігання даних,
+            відправлення електронної пошти тощо).
+          </p>
+          <img
+            src="./images/modul_5/e331d063-9686-48a6-93c0-274dc56c4858Frame 48436.png"
+            alt="forms"
+          />
+
+          <h4>Елемент <code>form</code></h4>
+          <p>
+            Елемент <code>form</code> — це розділ HTML-документа, що містить
+            інтерактивні елементи керування, які дозволяють користувачеві
+            надсилати інформацію на веб-сервер.
+          </p>
+          <div class="ql-syntax-block">
+            <pre
+              class="ql-syntax hljs language-xml"
+              spellcheck="false"
+              data-highlighted="yes"
+            ><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"feedback_form"</span> <span class="hljs-attr">autocomplete</span>=<span class="hljs-string">"off"</span> <span class="hljs-attr">novalidate</span>&gt;</span>
+            <span class="hljs-comment">&lt;!-- Елементи форми --&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+          </pre>
+            <button class="copy"></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Модуль 6. Адаптивний дизайн -->
+      <div class="container-content">
+        <!-- Основний контент -->
+        <h2 id="modul-6" class="container-title">
+          Модуль 6. Адаптивний дизайн
+        </h2>
       </div>
     </section>
   </body>

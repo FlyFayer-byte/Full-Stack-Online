@@ -10,8 +10,8 @@ body {
   min-height: 100vh; /* мінімальна висота на всю висоту вікна */
   background-color: #f9f9fd; /* колір фону */
   line-height: 1.5; /* міжрядковий інтервал */
-  color: #2f2f37; /* колір тексту */
-  font-size: 18px; /* розмір шрифту */
+  color: #302f37; /* колір тексту */
+  font-size: 16px; /* розмір шрифту */
 }
 
 /* Бокова панель навігації */
@@ -41,6 +41,15 @@ body {
   /* кожен пункт списку (<li>)  */
   margin-bottom: 8px; /* відступ між пунктами */
   line-height: 1; /* міжрядковий інтервал */
+  font-size: 1.1em; /* розмір шрифту пунктів меню */
+  font-weight: 500; /* напівжирний шрифт */
+  color: #2f2f37; /* колір тексту пунктів меню */
+  transition: background-color 0.3s ease; /* плавний перехід фону */
+  border-radius: 4px; /* закруглені кути пунктів меню */
+  padding: 5px; /* внутрішні відступи для пунктів меню */
+  background-color: #f9f9fd; /* колір фону пунктів меню */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* тінь для пунктів меню */
+  border: 1px solid transparent; /* прозора межа для пунктів меню */
 }
 .sidebar-link {
   /* посилання в пункті меню (<a>)  */
@@ -59,7 +68,6 @@ body {
 
 /* Основний контейнер для контенту (section) */
 .container {
-  box-sizing: border-box; /* враховує відступи та межі в ширині та висоті */
   width: calc(
     100% - 250px
   ); /* ширина на всю ширину вікна, мінус ширина бокового меню */
@@ -73,166 +81,95 @@ body {
 .side-title {
   text-align: center; /* вирівнювання заголовка по центру */
   color: goldenrod; /* колір заголовка */
+  font-size: 1.5em; /* розмір шрифту заголовка */
+  font-weight: bold; /* жирний шрифт */
+  margin-bottom: 20px; /* відступ знизу */
+  text-transform: uppercase; /* великі літери */
+  letter-spacing: 1px; /* міжбуквений інтервал */
+  padding: 10px; /* внутрішні відступи */
+  background-color: #f0f0f0; /* колір фону заголовка */
+  border-radius: 8px; /* закруглені кути заголовка */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* тінь для заголовка */
+  margin-top: 20px; /* відступ зверху */
+  margin-bottom: 20px; /* відступ знизу */
+  display: flex; /* флекс-контейнер для вирівнювання елементів */
+  justify-content: center; /* горизонтальне вирівнювання по центру */
+  align-items: center; /* вертикальне вирівнювання по центру */
+  flex-direction: column; /* вертикальне вирівнювання елементів */
+  border: 1px solid #03a9f4; /* межа навколо заголовка */
+  border-radius: 8px; /* закруглені кути заголовка */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* тінь для заголовка */
 }
 /* Заголовок контейнера (div) */
 .container-content {
   /* заголовок контейнера (div) */
-  display: flex; /* флекс-контейнер для вирівнювання елементів */
+  display: block; /* флекс-контейнер для вирівнювання елементів */
+  width: 1440px; /* ширина контейнера */
   margin: 0; /* скидаємо зовнішні відступи */
   align-items: center; /* вертикальне вирівнювання по центру */
   justify-content: center; /* горизонтальне вирівнювання по центру */
 }
 /* Заголовок контейнера (h2) */
 .container-title {
-  text-align: center; /* вирівнювання заголовка по центру */
   color: blue; /* колір заголовка */
-}
-
-/*---------------------------------------------------------------------------------------------*/
-/* * {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  background-color: #f9f9fd;
-  line-height: 1.5;
-  color: #2f2f37;
-  font-size: 18px;
-}
-
-h1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  color: goldenrod;
-}
-h1::before,
-h1::after {
-  width: 100px;
-  height: 2px;
-  background-color: red;
-  content: "";
-}
-h1:hover::before,
-h1:hover::after {
-  background-color: #03a9f4;
-}
-
-h2 {
-  color: blue;
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  text-align: center; /* вирівнювання заголовка по центру */
+  margin-bottom: 20px; /* відступ знизу */
+  font-size: 1.2em; /* розмір шрифту заголовка */
+  font-weight: bold; /* жирний шрифт */
+  text-transform: uppercase; /* великі літери */
+  letter-spacing: 1px; /* міжбуквений інтервал */
+  padding: 10px; /* внутрішні відступи */
+  background-color: #f0f0f0; /* колір фону заголовка */
+  border-radius: 8px; /* закруглені кути заголовка */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* тінь для заголовка */
 }
 
 h3 {
-  color: red;
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  /* Заголовки третього рівня */
+  color: #2f2f37; /* колір тексту */
+  font-size: 1.3em; /* розмір шрифту */
+  font-weight: bold; /* жирний шрифт */
+  margin-bottom: 10px; /* відступ знизу */
+  padding: 5px; /* внутрішні відступи */
+  padding-left: 20px;
+}
+h4 {
+  /* Заголовки четвертого рівня */
+  color: #2f2f37; /* колір тексту */
+  font-size: 1em; /* розмір шрифту */
+  font-weight: bold; 
+  margin-top: 10px; /* відступ зверху */
+  margin-bottom: 10px; /* відступ знизу */
+  padding: 5px; /* внутрішні відступи */
 }
 
-.ql-custom-iframe {
-  width: 100vh;
-  height: 500px;
+ul {
+  /* Списки */
+  list-style-type: disc; /* маркери списку */
+  padding-left: 30px; /* відступ зліва */
+  margin-bottom: 20px; /* відступ знизу */
 }
-
-code {
-  background-color: rgba(135, 131, 120, 0.15);
-  padding: 2px 2px;
-  border-radius: 4px;
-  color: #2f2f37;
+ol {
+  /* Нумеровані списки */
+  list-style-type: decimal; /* нумерація списку */
+  padding-left: 30px; /* відступ зліва */
+  margin-bottom: 20px; /* відступ знизу */
 }
-
-img {
-  width: 100vh;
-} */
-
-/*<p class="ql-align-justify">*/
-/* .ql-align-justify {
-  text-align: justify;
-} */
-
-/*<div class="ql-syntax-block">*/
-/* .ql-syntax-block {
-  position: relative;
-} */
-
-/*<pre class="ql-syntax hljs language-bnf">*/
-/* .ql-syntax {
-  position: relative;
-  font-family: "Fira Code", monospace;
-  padding: 24px 56px 24px 24px;
-  color: inherit;
-  background-color: rgb(236, 239, 241);
-  border-radius: 16px;
-
-  white-space: pre-wrap;
-} */
-
-/*<span class="hljs-attribute">*/
-/* .hljs-attribute,
-.hljs-string {
-  color: #98c379;
-}
-
-.ql-blockquote {
-  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  padding: 24px;
-  border: none;
-  border-radius: 16px;
-  background-color: rgb(236, 244, 248);
-  overflow: visible;
-  white-space: pre-wrap;
-} */
-
-/*----------Global Container----------*/
-/* Обнулюємо дефолтні маржини від браузера для заголовків та параграфів тексту */
-/* h1,
-h2,
-h3,
-h4,
-h5,
-h6,
 p {
-  margin: 0;
-  padding: 0;
-} */
-/* Обнулюємо дефолтні маржини та лівий падінг для списків */
-/* ul {
-  margin: 0;
-  list-style-type: none;
-  padding-left: 0;
-} */
-/* Скидаємо дефолтне підкреслення для посилань */
-/* a {
-  text-decoration: none;
-  color: inherit;
+  /* Параграфи */
+  margin-bottom: 15px; /* відступ знизу */
+  line-height: 1.6; /* міжрядковий інтервал */
 }
-.container {
-  margin-left: 250px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
-  border: 1px solid #03a9f4;
+img {
+  /* Зображення */
+  max-width: 100%; /* максимальна ширина зображення */
+  height: auto; /* автоматична висота зображення */
+  display: block; /* блочний елемент */
+  margin: 0 auto; /* вирівнювання по центру */
+  border-radius: 8px; /* закруглені кути зображення */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* тінь для зображення */
+  margin-bottom: 20px; /* відступ знизу */
+  border: 1px solid #03a9f4; /* межа навколо зображення */
+  padding: 1px; /* внутрішні відступи */
+  background-color: black; /* колір фону зображення */
 }
-/*----------Aside menu----------*/
-/*.menu {
-  width: 250px;
-  height: 100vh;
-  background-color: #f9f9fd;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 20px;
-  border-right: 1px solid #03a9f4;
-}
-section {
-  margin-left: 250px;
-  padding: 0 20px;
-} */
